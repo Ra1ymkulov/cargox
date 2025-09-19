@@ -8,6 +8,12 @@ const Footer = ({}) => {
   return (
     <footer className={scss.footer}>
       <img className={scss.backObject} src="/footer-object.svg" alt="" />
+      <img
+        className={scss.backObject}
+        id={scss.secondObject}
+        src="/footer-object2.svg"
+        alt=""
+      />
       <div className="container">
         <div className={scss.content}>
           <div className={scss.project}>

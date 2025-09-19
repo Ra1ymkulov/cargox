@@ -12,7 +12,11 @@
         height: 40px;
         object-fit: cover;
         object-position: center;
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.336));
       }
+    }
+    .burgerMenu {
+      display: none;
     }
     nav {
       display: flex;
@@ -30,6 +34,17 @@
       color: white;
       background-color: #58a6bc;
       padding: 10px 18px;
+    }
+  }
+}
+@media (max-width: 414px) {
+  .header .content {
+    .burgerMenu {
+      display: block;
+    }
+    nav,
+    .btns {
+      display: none;
     }
   }
 }

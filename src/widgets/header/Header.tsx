@@ -13,6 +13,9 @@ const Header = ({}) => {
           <div className={scss.logo}>
             <img src="/image 8.svg" alt="" />
           </div>
+          <div className={scss.burgerMenu}>
+            <img src="/burgerMenu.svg" alt="" />
+          </div>
           <nav>
             <Link href="/service">Услуги</Link>
             <Link href="/">Грузоперевозки</Link>
@@ -20,9 +23,11 @@ const Header = ({}) => {
             <Link href="/">Отзывы</Link>
             <Link href="/">Контакты</Link>
           </nav>
-          <Link href="/auth/signup">
-            <button>Войти</button>
-          </Link>
+          <div className={scss.btns}>
+            <Link href="/auth/signup">
+              <button>Войти</button>
+            </Link>
+          </div>
         </div>
       </div>
     </header>
