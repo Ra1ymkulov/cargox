@@ -1,3 +1,35 @@
 .header {
-  background: green;
+  background: linear-gradient(to right, #136489 44%, black 93%);
+  padding-block: 20px;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    .logo {
+      img {
+        width: 140px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      max-width: 530px;
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+    button {
+      color: white;
+      background-color: #58a6bc;
+      padding: 10px 18px;
+    }
+  }
 }
