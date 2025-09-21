@@ -19,14 +19,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <div className="layout">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <>
+      <head>
+        <link
+          rel="shortcut icon"
+          href="https://play-lh.googleusercontent.com/deIid8B-gffCIqVd3S0TxIXSzH9DrCcwJO-FmwwJNyPrVNZR0ufL0dv9JZt7N3PKWeI"
+          type="image/x-icon"
+        />
+      </head>
+      <html lang="en">
+        <body className={`${inter.className}`}>
+          <div className="layout">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </>
   );
 }
