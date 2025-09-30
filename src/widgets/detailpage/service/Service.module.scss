@@ -1,0 +1,57 @@
+#service {
+  padding-top: 80px;
+  .service {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    h1 {
+      font-size: clamp(1.563rem, 1.335rem + 1.14vw, 2.188rem);
+    }
+    .serviceTitle {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h6 {
+          font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+        }
+        .time {
+          display: flex;
+          align-items: center;
+          gap: 200px;
+          p {
+            font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+          }
+          span {
+            font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
+          }
+        }
+      }
+      .paste {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        padding-block: 10px;
+        h5 {
+          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+        }
+        .titlePaste {
+          display: flex;
+          align-items: center;
+          gap: 95px;
+          padding-right: 15px;
+          p {
+            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          }
+          span {
+            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          }
+        }
+      }
+    }
+  }
+}
