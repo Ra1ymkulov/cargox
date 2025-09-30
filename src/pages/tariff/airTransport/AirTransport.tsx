@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import scss from "./Service.module.scss";
-const Service = () => {
+import scss from "./AirTransport.module.scss";
+const AirTransport = () => {
   return (
     <div id={scss.service}>
       <div className="container">
         <div className={scss.service}>
-          <h1>Стоимость услуг по ж/д перевозкам</h1>
+          <h1>Стоимость услуг по авиаперевозкам</h1>
           <div className={scss.serviceTitle}>
             <div className={scss.title}>
               <h6>Направление</h6>
@@ -20,7 +20,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>2-3 дней</p>
                 <span>от</span>
-                <p>15 сом/кг</p>
+                <p>55 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -28,7 +28,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>5-7 дней</p>
                 <span>от</span>
-                <p>21 сом/кг</p>
+                <p>64 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -36,7 +36,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>2-3 дней</p>
                 <span>от</span>
-                <p>21 сом/кг</p>
+                <p>70 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -44,7 +44,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>2-3 дней</p>
                 <span>от</span>
-                <p>22 сом/кг</p>
+                <p>70 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -52,7 +52,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>6-9 дней</p>
                 <span>от</span>
-                <p>28 сом/кг</p>
+                <p>78 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -60,7 +60,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>7-10 дней</p>
                 <span>от</span>
-                <p>30 сом/кг</p>
+                <p>84 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -68,7 +68,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>8-12 дней</p>
                 <span>от</span>
-                <p>35 сом/кг</p>
+                <p>90 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -76,7 +76,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>9-12 дней</p>
                 <span>от</span>
-                <p>40 сом/кг</p>
+                <p>110 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -84,7 +84,7 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>10-14 дней</p>
                 <span>от</span>
-                <p>45 сом/кг</p>
+                <p>110 сом/кг</p>
               </div>
             </div>
             <div className={scss.paste}>
@@ -92,12 +92,9 @@ const Service = () => {
               <div className={scss.titlePaste}>
                 <p>12-18 дней</p>
                 <span>от</span>
-                <p>55 сом/кг</p>
+                <p>140 сом/кг</p>
               </div>
             </div>
-          </div>
-          <div className={scss.btn}>
-            <button>Перейти к оформлению</button>
           </div>
         </div>
       </div>
@@ -105,4 +102,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default AirTransport;
