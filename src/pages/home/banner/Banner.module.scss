@@ -96,6 +96,7 @@
   .banner .content {
     flex-direction: column;
     .calculator {
+      justify-content: center;
       .inputs {
         max-width: 280px;
       }
