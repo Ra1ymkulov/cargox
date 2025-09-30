@@ -1,4 +1,4 @@
-import DetailPage from "@/widgets/detailpage/DetailPage";
+import DetailPage from "@/pages/detailpage/DetailPage";
 import React from "react";
 
 const page = () => {
