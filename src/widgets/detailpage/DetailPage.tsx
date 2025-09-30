@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Banner from "./banner/Banner";
 import TitleDetail from "./titleDetail/TitleDetail";

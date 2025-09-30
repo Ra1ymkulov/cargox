@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import scss from "./Service.module.scss";
-const Service = () => {
+import scss from "./Transportation.module.scss";
+const Transportation = () => {
   return (
     <div id={scss.service}>
       <div className="container">
@@ -96,13 +96,10 @@ const Service = () => {
               </div>
             </div>
           </div>
-          <div className={scss.btn}>
-            <button>Перейти к оформлению</button>
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Service;
+export default Transportation;
