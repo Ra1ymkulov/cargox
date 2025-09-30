@@ -1,12 +1,6 @@
 import Tariff from "@/pages/tariff/Tariff";
 import React from "react";
 
-const page = () => {
-  return (
-    <div>
-      <Tariff />
-    </div>
-  );
-};
+const page = () => <Tariff />;
 
 export default page;
