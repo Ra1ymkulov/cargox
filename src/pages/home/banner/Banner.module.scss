@@ -61,6 +61,9 @@
           &::placeholder {
             color: rgba(0, 0, 0, 0.4);
           }
+          &:focus {
+            box-shadow: 0 0 5px 1px #ffffff4d;
+          }
         }
         button {
           color: #001f54;
@@ -70,6 +73,7 @@
           &:focus {
             background-color: rgb(37, 37, 37);
             color: white;
+            box-shadow: 0 0 5px 1px #ffffff4d;
           }
         }
         input {
@@ -98,7 +102,6 @@
           color: black;
           &:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 10px 1px #ffffff8f;
           }
         }
       }
