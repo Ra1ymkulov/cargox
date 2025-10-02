@@ -48,12 +48,10 @@
             padding: clamp(0.688rem, 0.574rem + 0.48vw, 0.938rem);
             font-size: 16px;
             max-height: 300px;
-            min-height: 50px;
           }
           textarea,
           input {
             width: 100%;
-            color: white;
             border-radius: 5px;
             border: 2px solid white;
             background: none;

@@ -6,7 +6,7 @@ import Service from "./service/Service";
 
 const DetailPage = () => {
   return (
-    <div className="container">
+    <div>
       <Banner />
       <TitleDetail />
       <Service />
