@@ -27,4 +27,8 @@ button {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  background-color: white;
+  &:active {
+    transform: scale(0.95);
+  }
 }

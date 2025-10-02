@@ -11,8 +11,18 @@
     height: 70vh;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 740px) {
   .map img {
     height: 50vh;
+  }
+}
+@media (max-width: 500px) {
+  .map img {
+    height: 40vh;
+  }
+}
+@media (max-width: 375px) {
+  .map img {
+    height: 25vh;
   }
 }
