@@ -1,23 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import scss from "./User.module.scss";
-import UserProfile from "@/widgets/sidebar/user-profile/UserProfile";
-import UserOrder from "@/widgets/sidebar/user-order/UserOrder";
 
 const User = () => {
   const [tab, setTab] = useState<string>("userProfile");
-  const handleTab = (tab: string) => {
-    switch (tab) {
-      case "userProfile":
-        return <UserProfile />;
-      case "userOrder":
-        return <UserOrder />;
-      case "userNotification":
-        return <UserProfile />;
-      default:
-        break;
-    }
-  };
+
   return (
     <div className={scss.userlayout}>
       <div className="container">
@@ -64,7 +51,7 @@ const User = () => {
             </div>
           </div>
         </div>
-        <div>{}</div>
+        <div></div>
       </div>
     </div>
   );
