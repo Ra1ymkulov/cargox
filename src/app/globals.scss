@@ -6,8 +6,8 @@
   box-sizing: border-box;
   object-fit: cover;
 }
-::-webkit-scrollbar {
-  display: none;
+body {
+  color: #001f54;
 }
 .layout {
   min-height: 100vh;
@@ -27,4 +27,8 @@ button {
   border: none;
   border-radius: 5px;
   padding: 5px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

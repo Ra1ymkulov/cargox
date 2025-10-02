@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className={scss.content}>
           <div className={scss.market}>
-            <img src="/icon-van.svg" alt="" />
+            <img src="/CargoXWhite.svg" alt="" />
             <p>
               Мы обеспечиваем доставку груза в Кыргызстан различными видами
               транспорта из стран Европы, а также из России, Казахстана и
