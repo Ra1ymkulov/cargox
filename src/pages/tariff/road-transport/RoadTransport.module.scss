@@ -3,12 +3,11 @@
   .service {
     display: flex;
     flex-direction: column;
-    gap: 70px;
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-block: 30px;
+      padding-block: 40px;
 
       button {
         background: black;
@@ -29,6 +28,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-top: 70px;
         h6 {
           font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
         }
@@ -36,6 +36,9 @@
           display: flex;
           align-items: center;
           gap: 200px;
+          justify-content: space-between;
+          max-width: 440px;
+          width: 100%;
           p {
             font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
           }
@@ -51,18 +54,21 @@
         border-bottom: 1px solid black;
         padding-block: 10px;
         h5 {
-          font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
         }
         .titlePaste {
           display: flex;
           align-items: center;
-          gap: 95px;
+          justify-content: space-between;
           padding-right: 15px;
+          max-width: 450px;
+          width: 100%;
+
           p {
-            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+            font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
           }
           span {
-            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+            font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
           }
         }
       }
