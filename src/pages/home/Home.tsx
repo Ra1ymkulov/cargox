@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import scss from "./Home.module.scss";
 import Banner from "./banner/Banner";
 import Services from "./services/Services";
 import Reason from "./why-we/Reason";
@@ -11,7 +10,7 @@ interface IHomeProps {}
 
 const Home = ({}) => {
   return (
-    <div className={scss.home}>
+    <div>
       <Banner />
       <Services />
       <Reason />

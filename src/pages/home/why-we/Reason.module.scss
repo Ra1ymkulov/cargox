@@ -61,3 +61,19 @@
     max-width: 500px;
   }
 }
+@media (max-width: 600px) {
+  .reason .content .list {
+    gap: 40px;
+    .circle {
+      width: 100px;
+      height: 100px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
