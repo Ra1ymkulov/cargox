@@ -1,0 +1,32 @@
+#bannerMain {
+  .detailBannerimage {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+  }
+  .bannerMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 589px;
+    h1 {
+      font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
+      color: white;
+    }
+    p {
+      color: white;
+      font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+      max-width: 400px;
+    }
+    button {
+      font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+      padding: 10px 10px;
+      max-width: 300px;
+    }
+  }
+}

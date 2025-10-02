@@ -1,0 +1,49 @@
+#ContactTitle {
+  .box {
+    display: flex;
+    flex-direction: column;
+
+    .ContactTitle {
+      padding-block: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      h1 {
+        font-size: clamp(1.125rem, 0.966rem + 0.8vw, 1.563rem);
+      }
+      .support {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title {
+          span {
+            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
+          }
+          p {
+            font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+          }
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+    .supportContact {
+      padding-block: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      h1 {
+        font-size: clamp(1.125rem, 0.966rem + 0.8vw, 1.563rem);
+      }
+      .supportContactTitle {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        p {
+          font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+        }
+      }
+    }
+  }
+}

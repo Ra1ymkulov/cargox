@@ -9,15 +9,16 @@
     .market {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 30px;
+      margin-top: 10px;
+      width: 100%;
       max-width: 450px;
       width: 100%;
       img {
-        width: 99px;
-        height: 25px;
+        width: 90px;
       }
       p {
-        font-size: 15px;
+        font-size: clamp(0.688rem, 0.574rem + 0.48vw, 0.938rem);
         font-weight: 400;
         color: rgba(255, 255, 255, 0.6);
         width: 100%;
@@ -35,17 +36,44 @@
     }
     ul {
       flex: 1;
+      min-width: 130px;
       li:first-child {
-        font-size: 21px;
+        font-size: clamp(0.813rem, 0.585rem + 0.97vw, 1.313rem);
         color: white;
       }
       li {
         line-height: 2.5;
         color: rgba(255, 255, 255, 0.6);
-        font-size: 15px;
+        font-size: clamp(0.688rem, 0.574rem + 0.48vw, 0.938rem);
       }
       &:last-child {
         flex: 1.5;
+      }
+    }
+    @media (max-width: 1200px) {
+      .market {
+        max-width: 400px;
+      }
+    }
+    @media (max-width: 1150px) {
+      .market {
+        max-width: 260px;
+      }
+    }
+    @media (max-width: 880px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      ul:last-child {
+        flex: 1;
+      }
+    }
+    @media (max-width: 550px) {
+      text-align: center;
+      .market {
+        align-items: center;
+        .icons img {
+          max-width: 20px;
+        }
       }
     }
   }
@@ -57,7 +85,7 @@
       background-color: rgba(255, 255, 255, 0.6);
     }
     p {
-      font-size: 15px;
+      font-size: clamp(0.688rem, 0.574rem + 0.48vw, 0.938rem);
       font-weight: 600;
       font-family: Montserrat;
       color: white;

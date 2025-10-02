@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Transportation from "./transportation/Transportation";
-import AirTransport from "./airTransport/AirTransport";
-import RoadTransport from "./roadTransport/RoadTransport";
+import AirTransport from "./air-transport/AirTransport";
+import RoadTransport from "./road-transport/RoadTransport";
 
 const Tariff = () => {
   return (
