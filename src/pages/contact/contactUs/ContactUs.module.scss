@@ -1,0 +1,43 @@
+#ContactUs {
+  background: black;
+  padding-block: 40px;
+  .ContactUs {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    h1 {
+      color: white;
+      font-size: clamp(1.25rem, 0.909rem + 1.7vw, 2.188rem);
+    }
+    .ContactUsArea {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      .ContactUsInput {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        input {
+          padding: 10px 10px;
+          max-width: 600px;
+          width: 100%;
+          background: black;
+          border: 1px solid white;
+          color: white;
+        }
+      }
+    }
+    .ContactUsButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        padding: 10px 10px;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+}
