@@ -48,8 +48,8 @@ const Footer = () => {
         <div className={scss.bottom}>
           <div className={scss.line}></div>
           <p>
-            2023 © HYDRA LANDING PAGE - BY ZINE. E. FALOUTI - ALL RIGHTS
-            RESERVED
+            © 2025 Cargo X — Надежная доставка грузов в Кыргызстан и страны СНГ.
+            Все права защищены.
           </p>
         </div>
       </div>
