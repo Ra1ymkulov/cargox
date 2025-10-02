@@ -1,6 +1,7 @@
 #ContactUs {
   background: black;
   padding-block: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.382);
   .ContactUs {
     display: flex;
     flex-direction: column;
@@ -20,13 +21,23 @@
         flex-direction: column;
         gap: 10px;
         input {
-          padding: 10px 10px;
+          padding: 20px;
+          border-radius: 5px;
           max-width: 600px;
           width: 100%;
           background: black;
-          border: 1px solid white;
+          border: 1px solid rgba(255, 255, 255, 0.825);
           color: white;
         }
+      }
+      textarea {
+        width: 100%;
+        max-width: 600px;
+        background: black;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.825);
       }
     }
     .ContactUsButton {
@@ -37,6 +48,7 @@
         padding: 10px 10px;
         max-width: 300px;
         width: 100%;
+        cursor: pointer;
       }
     }
   }

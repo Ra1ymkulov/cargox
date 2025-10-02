@@ -12,16 +12,7 @@ const ContactUs = () => {
               <input placeholder="Номер телефона" type="text" />
               <input placeholder="Введите email" type="text" />
             </div>
-            <textarea
-              style={{
-                width: "600px",
-                background: "black",
-                border: "1px solid white",
-                padding: "10px 10px",
-                color: "white",
-              }}
-              placeholder="Введите текст о проблеме"
-            ></textarea>
+            <textarea placeholder="Введите текст о проблеме"></textarea>
           </div>
           <div className={scss.ContactUsButton}>
             <button>Отправить отзыв</button>
