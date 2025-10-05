@@ -37,10 +37,17 @@ const Sidebar = () => {
           <IoSettingsOutline fontSize={25} color="#001F54" />
           <p>Настройки</p>
         </div>
-      </div>
-      <div className={`${scss.logout}`}>
-        <MdLogout fontSize={25} color="#001F54" />
-        <p>Выйти</p>
+        <div
+          onClick={() => router.push("/user/create")}
+          className={`${scss.card}`}
+        >
+          <FaRegFileAlt fontSize={25} color="#001F54" />
+          <p>Заказы</p>
+        </div>
+        <div className={`${scss.logout}`}>
+          <MdLogout fontSize={25} color="rgb(255, 91, 91)" />
+          <p>Выйти</p>
+        </div>
       </div>
     </div>
   );
