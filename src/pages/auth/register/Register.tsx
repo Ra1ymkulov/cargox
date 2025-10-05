@@ -18,7 +18,7 @@ const Register = () => {
           <div className={scss.getInfo}>
             <div className={scss.userData}>
               <div className={scss.input}>
-                <p>Регистрация</p>
+                <p>Имя</p>
                 <input type="text" />
               </div>
               <div className={scss.input}>
