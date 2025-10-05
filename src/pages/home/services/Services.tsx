@@ -1,7 +1,10 @@
+"use client";
 import { FC } from "react";
 import scss from "./Services.module.scss";
+import { useRouter } from "next/navigation";
 
 const Services: FC = () => {
+  const router = useRouter();
   return (
     <section className={scss.services}>
       <div className="container">
@@ -15,7 +18,9 @@ const Services: FC = () => {
                   <h3>Автоперевозки</h3>
                   <p>Доставка грузов фурами по городу, регионам и странам.</p>
                 </div>
-                <button>Подробнее</button>
+                <button onClick={() => router.push("/detail")}>
+                  Подробнее
+                </button>
               </div>
             </div>
             <div className={scss.card}>
@@ -25,7 +30,9 @@ const Services: FC = () => {
                   <h3>Aвиа</h3>
                   <p>Срочные международные перевозки за минимальное время.</p>
                 </div>
-                <button>Подробнее</button>
+                <button onClick={() => router.push("/detail")}>
+                  Подробнее
+                </button>
               </div>
             </div>
             <div className={scss.card}>
@@ -38,7 +45,9 @@ const Services: FC = () => {
                     дороге.
                   </p>
                 </div>
-                <button>Подробнее</button>
+                <button onClick={() => router.push("/detail")}>
+                  Подробнее
+                </button>
               </div>
             </div>
           </div>

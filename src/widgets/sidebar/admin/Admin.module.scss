@@ -34,16 +34,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 30px 70px;
     .card {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      max-width: 330px;
+      // max-width: 330px;
       background: rgb(255, 255, 255);
       box-shadow: 0 2 6px 0 rgb(0, 0, 0, 0.25);
       border-radius: 10px;
       padding: 20px;
+      flex: 1;
       .contentbox {
         display: flex;
         flex-direction: column;
@@ -82,8 +83,8 @@
       .contentOrder {
         display: flex;
         align-items: center;
-        max-width: 285px;
         justify-content: space-between;
+        width: 100%;
         gap: 10px;
         .contentPast {
           display: flex;

@@ -29,6 +29,10 @@
         border-radius: 10px;
         position: relative;
         color: white;
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.03);
+        }
         img {
           border-radius: 10px;
           position: absolute;

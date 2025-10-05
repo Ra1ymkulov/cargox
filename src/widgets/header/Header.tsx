@@ -25,6 +25,7 @@ const Header = () => {
           <div className={scss.user}>
             <FiBell
               style={{ cursor: "pointer" }}
+              onClick={() => router.push("/user/notification")}
               fontSize={25}
               color="#001f54"
             />
