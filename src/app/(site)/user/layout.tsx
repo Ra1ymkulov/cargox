@@ -6,7 +6,7 @@ const LayoutSideBar = ({ children }: { children: React.ReactNode }) => {
   return (
     <div style={{ display: "flex" }} className="layoutSideBar">
       <Sidebar />
-      <main>{children}</main>
+      {children}
     </div>
   );
 };
