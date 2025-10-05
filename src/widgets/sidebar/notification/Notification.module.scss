@@ -1,0 +1,32 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    height: 45px;
+    border-top: 1px solid gray;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .newmessage {
+        width: 7px;
+        height: 7px;
+        background: blue;
+        border-radius: 50%;
+      }
+      img {
+        width: 84px;
+        height: 20px;
+      }
+    }
+    p {
+      font-size: 16px;
+      color: #001f54;
+    }
+  }
+}
