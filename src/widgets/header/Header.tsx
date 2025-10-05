@@ -11,7 +11,7 @@ const Header = () => {
     <header className={scss.header}>
       <div className="container">
         <div className={scss.content}>
-          <div className={scss.logo}>
+          <div onClick={() => router.push("/")} className={scss.logo}>
             <img src="/logo-cargoX.svg" alt="logo project" />
           </div>
           <nav className={scss.nav}>
@@ -23,8 +23,13 @@ const Header = () => {
             <p onClick={() => router.push("/contact")}>Контакты</p>
           </nav>
           <div className={scss.user}>
-            <FiBell fontSize={25} color="#001f54" />
+            <FiBell
+              style={{ cursor: "pointer" }}
+              fontSize={25}
+              color="#001f54"
+            />
             <FaRegUser
+              style={{ cursor: "pointer" }}
               onClick={() => router.push("/user")}
               fontSize={23}
               color="#001f54"

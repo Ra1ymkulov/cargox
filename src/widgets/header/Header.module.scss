@@ -9,6 +9,7 @@
       display: flex;
       align-items: center;
       img {
+        cursor: pointer;
         width: 105px;
         height: 25px;
       }
@@ -19,16 +20,18 @@
       gap: 20px;
       select {
         display: flex;
-        align-items: centerz;
+        align-items: center;
         border: none;
         font-size: 16px;
         background: none;
         color: #001f54;
         font-weight: 500;
+        cursor: pointer;
       }
       p {
         font-size: 16px;
         font-weight: 400;
+        cursor: pointer;
       }
     }
     .user {
