@@ -7,7 +7,7 @@ import { FiEyeOff } from "react-icons/fi";
 
 import Link from "next/link";
 
-const Register = () => {
+export const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [repeatShowPassword, setRepeatShowPassword] = useState(false);
   return (
@@ -82,5 +82,3 @@ const Register = () => {
     </div>
   );
 };
-
-export default Register;
