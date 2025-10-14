@@ -1,1 +1,1 @@
-export { registerApi } from "./api/registerApi";
+export { useRegisterApi } from "./api/registerApi";

@@ -61,6 +61,11 @@
           cursor: pointer;
         }
       }
+      .error {
+        color: red;
+        font-size: clamp(0.625rem, 0.602rem + 0.11vw, 0.688rem);
+        line-height: 2;
+      }
     }
   }
 }
