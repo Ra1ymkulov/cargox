@@ -26,14 +26,14 @@ const Header = () => {
             <FiBell
               style={{ cursor: "pointer" }}
               onClick={() => router.push("/user/notification")}
-              fontSize={25}
-              color="#001f54"
+              fontSize={24}
+              color="white"
             />
             <FaRegUser
               style={{ cursor: "pointer" }}
               onClick={() => router.push("/user")}
-              fontSize={23}
-              color="#001f54"
+              fontSize={22}
+              color="#fff"
             />
           </div>
         </div>

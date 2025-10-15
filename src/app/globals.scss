@@ -7,7 +7,7 @@
   object-fit: cover;
 }
 body {
-  color: #001f54;
+  color: white;
 }
 .layout {
   min-height: 100vh;
@@ -26,8 +26,9 @@ body {
 button {
   border: none;
   border-radius: 5px;
-  padding: 5px;
-  background-color: white;
+  padding: 8px 10px;
+  background-color: #7db200;
+  color: white;
   &:active {
     transform: scale(0.95);
   }

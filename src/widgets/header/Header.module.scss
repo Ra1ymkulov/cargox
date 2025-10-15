@@ -1,17 +1,20 @@
 .header {
-  padding-block: 25px;
-  background-color: rgba(236, 236, 236, 1);
+  padding-block: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  z-index: 10;
   .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: white;
     .logo {
       display: flex;
       align-items: center;
       img {
         cursor: pointer;
-        width: 105px;
-        height: 25px;
+        height: 23px;
       }
     }
     .nav {
@@ -24,12 +27,12 @@
         border: none;
         font-size: 16px;
         background: none;
-        color: #001f54;
         font-weight: 500;
         cursor: pointer;
+        color: white;
       }
       p {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         cursor: pointer;
       }
