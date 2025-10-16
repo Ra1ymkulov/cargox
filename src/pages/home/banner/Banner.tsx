@@ -1,7 +1,11 @@
 import { FC } from "react";
 import scss from "./Banner.module.scss";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner: FC = () => {
+  const words = [
+    " Рассчитайте стоимость и закажите доставку по всему миру прямо сейчас",
+  ];
   return (
     <section className={scss.banner}>
       <img
@@ -14,8 +18,13 @@ const Banner: FC = () => {
           <div className={scss.title}>
             <p>Быстрая и надёжная логистика</p>
             <h1>
-              Рассчитайте стоимость и закажите доставку по всему миру прямо
-              сейчас
+              <Typewriter
+                words={words}
+                typeSpeed={70}
+                deleteSpeed={20}
+                loop={0}
+                cursor={true}
+              />
             </h1>
             <button>Узнать стоимость</button>
           </div>
