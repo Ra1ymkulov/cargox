@@ -4,7 +4,7 @@ import scss from "./Map.module.scss";
 const Map = () => {
   return (
     <div className={scss.map}>
-      <img src="/map-of-world.svg" alt="" />
+      <img src="/main-map.svg" alt="" />
     </div>
   );
 };

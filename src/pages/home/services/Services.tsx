@@ -10,46 +10,17 @@ const Services: FC = () => {
       <div className="container">
         <div className={scss.content}>
           <h1>Наши услуги</h1>
-          <div className={scss.cards}>
-            <div className={scss.card}>
-              <img src="/card-img1.svg" alt="" />
-              <div className={scss.info}>
-                <div className={scss.title}>
-                  <h3>Автоперевозки</h3>
-                  <p>Доставка грузов фурами по городу, регионам и странам.</p>
-                </div>
-                <button onClick={() => router.push("/detail")}>
-                  Подробнее
-                </button>
-              </div>
+          <div className={scss.list}>
+            <div className={scss.title}>
+              <h1>Международная доставка грузов</h1>
+              <p>
+                Мы доставляем ваши товары из Турции, Китая, США, Европы и других
+                стран быстро, безопасно и по выгодной цене. Вы можете выбрать
+                авиа, авто или морскую доставку в зависимости от сроков и
+                бюджета.
+              </p>
             </div>
-            <div className={scss.card}>
-              <img src="/card-img2.svg" alt="" />
-              <div className={scss.info}>
-                <div className={scss.title}>
-                  <h3>Aвиа</h3>
-                  <p>Срочные международные перевозки за минимальное время.</p>
-                </div>
-                <button onClick={() => router.push("/detail")}>
-                  Подробнее
-                </button>
-              </div>
-            </div>
-            <div className={scss.card}>
-              <img src="/card-img3.svg" alt="" />
-              <div className={scss.info}>
-                <div className={scss.title}>
-                  <h3>Ж/д перевозки</h3>
-                  <p>
-                    Надёжная доставка контейнеров и массовых грузов по железной
-                    дороге.
-                  </p>
-                </div>
-                <button onClick={() => router.push("/detail")}>
-                  Подробнее
-                </button>
-              </div>
-            </div>
+            <img src="/fura.svg" alt="" />
           </div>
         </div>
       </div>

@@ -1,0 +1,38 @@
+.info {
+  padding-block: 70px;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    .card {
+      flex: 1;
+      background-color: #e8e8e8;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-height: 400px;
+      img {
+        height: 60px;
+        width: 60px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #7db200;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        max-width: 250px;
+        margin-top: auto;
+      }
+      &:nth-child(2) {
+        background-color: #dcdcdc;
+      }
+      &:nth-child(3) {
+        background-color: #d0d0d0;
+      }
+    }
+  }
+}
