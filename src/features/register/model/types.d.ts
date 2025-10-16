@@ -11,7 +11,6 @@ interface IRegReq {
   password: string;
 }
 //
-
 interface IUserType {
   id: string;
   avatar: string;
