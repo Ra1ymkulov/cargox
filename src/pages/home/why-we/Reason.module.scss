@@ -1,6 +1,6 @@
 .reason {
   position: absolute;
-  top: 80%;
+  top: 62%;
   width: 100%;
   z-index: 10%;
 
@@ -32,7 +32,7 @@
           width: 45px;
           height: 45px;
           object-fit: contain;
-          transition: 0.5s;
+          transition: 0.5s ease-in;
         }
 
         p {
@@ -40,7 +40,7 @@
           line-height: 1.5;
           font-weight: 400;
           color: black;
-          transition: 0.5s;
+          transition: 0.5s ease-in;
         }
         &:last-child {
           box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1),
@@ -57,7 +57,7 @@
             height: 60px;
           }
           p {
-            font-size: 16px;
+            font-size: 15px;
           }
         }
       }
