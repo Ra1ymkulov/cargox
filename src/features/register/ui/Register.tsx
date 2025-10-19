@@ -24,7 +24,7 @@ export const Register = () => {
   const { handleSubmit, register, reset, formState, watch } =
     useForm<IRegisterProps>();
 
-  const { mutateAsync: registerFunc, isPending } = useRegisterApi();
+  const { mutateAsync: registerFunc } = useRegisterApi();
 
   const [showPassword, setShowPassword] = useState(false);
   const [repeatShowPassword, setRepeatShowPassword] = useState(false);
@@ -39,7 +39,7 @@ export const Register = () => {
   const userNameError = formState.errors.userName?.message;
 
   const onSubmit = (inputValues: IRegisterProps) => {
-    const data: USER.GetUserReq = {
+    const data: USERREGISTER.GetUserReq = {
       fullName: `${inputValues.firstName} ${inputValues.lastName}`,
       email: inputValues.email,
       userName: inputValues.userName,
@@ -47,7 +47,6 @@ export const Register = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeH-BVVrSQ1Sf1Yavi5a4mZ6aMZ...",
       password: inputValues.password,
     };
-
     registerFunc(data);
     reset();
   };

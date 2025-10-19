@@ -1,3 +1,0 @@
-interface INotification {
-  id: string;
-}

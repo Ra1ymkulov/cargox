@@ -1,0 +1,38 @@
+interface INotification {
+  id: string;
+}
+interface User {
+  id: string;
+  avatar: string;
+  fullName: string;
+  userName: string;
+  email: string;
+  password: string;
+  role: UserRole;
+  orders: OrderUser[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+enum UserRole {
+  ADMIN = "ADMIN",
+  CLIENT = "CLIENT",
+}
+interface OrderUser {
+  id: number;
+  userId: string;
+  createdAt: Date;
+  weightKg: number;
+  price: number;
+  trackingCode: string;
+  read: boolean;
+  status: OrderStatus;
+  fromCityId: string;
+  toCityId: string;
+  serviceTypeId: string;
+}
+enum OrderStatus {
+  CREATED = "CREATED",
+  IN_PROGRESS = "IN_PROGRESS",
+  DELIVERED = "DELIVERED",
+  CANCELED = "CANCELED",
+}
