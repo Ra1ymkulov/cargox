@@ -1,30 +1,51 @@
 .map {
-  background-color: black;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.382);
-  padding: 50px;
-  img {
+  position: relative;
+  padding-block: 40px;
+  margin-block: 70px;
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
     width: 100%;
-    height: 80vh;
-    object-fit: contain;
+    display: none;
+  }
+  .back2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 30px;
+    img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      h1 {
+        font-weight: 500;
+      }
+      p {
+        font-size: clamp(0.625rem, 0.523rem + 0.51vw, 0.906rem);
+        width: 90%;
+        line-height: 2;
+      }
+    }
   }
 }
-@media (max-width: 900px) {
-  .map img {
-    height: 70vh;
-  }
-}
-@media (max-width: 740px) {
-  .map img {
-    height: 50vh;
-  }
-}
-@media (max-width: 500px) {
-  .map img {
-    height: 40vh;
-  }
-}
-@media (max-width: 375px) {
-  .map img {
-    height: 25vh;
+@media (max-width: 1200px) {
+  .back {
+    display: block;
   }
 }
