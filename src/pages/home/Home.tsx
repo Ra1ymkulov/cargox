@@ -13,9 +13,9 @@ const Home = ({}) => {
       <Banner />
       <Reason />
       <Services />
-      <Info />
       {/* <Fillials /> */}
       <Map />
+      <Info />
     </div>
   );
 };
