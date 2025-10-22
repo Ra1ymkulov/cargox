@@ -18,9 +18,10 @@
       }
     }
     .nav {
+      position: relative;
       display: flex;
-      align-items: center;
-      gap: 20px;
+      gap: 2rem;
+      cursor: pointer;
       select {
         display: flex;
         align-items: center;
@@ -31,11 +32,29 @@
         cursor: pointer;
         color: white;
       }
-      p {
-        font-size: 14px;
-        font-weight: 400;
-        cursor: pointer;
+    }
+
+    .item {
+      color: white;
+      position: relative;
+      transition: color 0.3s;
+
+      &:hover {
+        color: white;
       }
+    }
+
+    .active {
+      color: white;
+    }
+
+    .underline {
+      position: absolute;
+      bottom: -10px;
+      height: 4px;
+      background-color: red;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
     .user {
       display: flex;
