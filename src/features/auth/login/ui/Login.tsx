@@ -5,11 +5,13 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useLoginApi } from "../api/loginApi";
+import { useRouter } from "next/navigation";
 interface LoginTypeInput {
   password: string;
   email: string;
 }
 export const Login = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const { register, formState, reset, handleSubmit } =
     useForm<LoginTypeInput>();
@@ -17,6 +19,7 @@ export const Login = () => {
   function onSubmit(inputValues: LoginTypeInput) {
     DataPost(inputValues);
     reset();
+    router.push("/");
   }
   return (
     <div className={scss.login}>
