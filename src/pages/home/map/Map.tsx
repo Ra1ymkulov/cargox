@@ -26,9 +26,9 @@ const Map = () => {
             </span>
             <div className={scss.readflut}>
               {!state
-                ? items.map((item: any, ind) => (
-                    <div className={scss.readflutText}>
-                      <p onClick={() => UseState(true)} key={ind}>
+                ? items.map((item: any, index) => (
+                    <div key={index} className={scss.readflutText}>
+                      <p onClick={() => UseState(true)}>
                         {item.text.slice(0, 150)}
                         <span>
                           <br />
@@ -37,8 +37,8 @@ const Map = () => {
                       </p>
                     </div>
                   ))
-                : items.map((item) => (
-                    <p onClick={() => UseState(false)}>
+                : items.map((item, index) => (
+                    <p key={index} onClick={() => UseState(false)}>
                       {item.text}
                       <span> ...закрыть</span>
                     </p>
