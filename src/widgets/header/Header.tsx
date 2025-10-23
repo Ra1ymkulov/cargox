@@ -1,6 +1,5 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import scss from "./Header.module.scss";
 import { FiBell } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
