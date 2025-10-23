@@ -1,6 +1,6 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import React from "react";
 import scss from "./Header.module.scss";
 import { FiBell } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
@@ -13,7 +13,6 @@ const Header = () => {
     { name: "Контакты", path: "/contact" },
   ];
   const router = useRouter();
-
   return (
     <header className={scss.header}>
       <div className="container">
@@ -33,12 +32,7 @@ const Header = () => {
             </select>
 
             {items.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`${scss.item}`}
-                data-path={item.path}
-              >
+              <Link key={item.name} href={item.path} className={`${scss.item}`}>
                 {item.name}
               </Link>
             ))}
