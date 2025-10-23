@@ -1,5 +1,30 @@
 .register {
-  padding-block: 40px;
+  padding-block: 100px 40px;
+  .main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    .titleMain {
+      width: 100%;
+      max-width: 370px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      img {
+        height: 30px;
+        object-fit: contain;
+      }
+      h1 {
+        font-size: 27px;
+      }
+      p {
+        color: #6d6d6d;
+        font-size: 19px;
+      }
+    }
+  }
   .content {
     display: flex;
     flex-direction: column;
@@ -21,7 +46,8 @@
         flex-wrap: wrap;
         gap: 10px;
         .input {
-          width: 48.7%;
+          width: 100%;
+          max-width: 175px;
         }
       }
       .input {
