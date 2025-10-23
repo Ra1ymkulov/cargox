@@ -44,7 +44,6 @@ const Header = () => {
             <img src="/logo-cargoX.svg" alt="logo project" />
           </div>
           <nav className={scss.nav} ref={navRef}>
-            {/* Select стоит перед пунктами меню */}
             <select className={scss.select}>
               <option value="Услуги">Услуги</option>
             </select>

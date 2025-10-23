@@ -16,6 +16,7 @@
     justify-content: space-between;
     gap: 40px;
     margin-top: 30px;
+
     img {
       width: 100%;
       height: 500px;
@@ -25,6 +26,7 @@
       padding: 12px;
       scrollbar-color: white darkgrey;
       overflow-y: scroll;
+      max-height: 500px;
       &::-webkit-scrollbar {
         width: 10px;
         border-radius: 5px;
@@ -48,6 +50,11 @@
         width: 90%;
         font-size: clamp(0.625rem, 0.523rem + 0.51vw, 0.906rem);
         max-height: 250px;
+      }
+      .readflut {
+        span {
+          color: rgb(125, 178, 0);
+        }
       }
     }
   }
