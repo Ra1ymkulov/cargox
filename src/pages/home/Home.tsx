@@ -3,9 +3,9 @@ import React from "react";
 import Banner from "./banner/Banner";
 import Services from "./services/Services";
 import Reason from "./why-we/Reason";
-import Fillials from "./fillials/Fillials";
 import Map from "./map/Map";
 import Info from "./information/Info";
+import Carousel from "./carousel/Carousel";
 
 const Home = ({}) => {
   return (
@@ -14,7 +14,7 @@ const Home = ({}) => {
       <Reason />
       <Services />
       <Info />
-      {/* <Fillials /> */}
+      <Carousel />
       <Map />
     </div>
   );
