@@ -6,18 +6,22 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
+import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const User = () => {
   const img =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIH-BVvr5QT15XFlYawi54nA0ayrqRmzVit_8AJ2E9MVOBQwQmtl79MiuUlHLRXiBEWk&usqp=CAU";
   const defaultProfileImage =
     "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small_2x/default-avatar-icon-of-social-media-user-vector.jpg";
+  const { data: user } = useGetUserQuery();
+  console.log(user);
+
   return (
     <div className={scss.profile}>
       <div className={scss.user}>
         <img src={img ? img : defaultProfileImage} alt="" />
         <div className={scss.title}>
-          <h2>Baby Jhon</h2>
+          <h2>{user?.fullName}</h2>
           <i>@baby234123</i>
         </div>
       </div>

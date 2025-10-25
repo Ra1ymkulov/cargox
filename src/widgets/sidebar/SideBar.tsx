@@ -8,9 +8,11 @@ import { MdLogout } from "react-icons/md";
 import { AiOutlineFileDone } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
 import { LuUserRoundCog } from "react-icons/lu";
+import { useLogout } from "@/features/auth/logout/logout";
 
 const Sidebar = () => {
   const router = useRouter();
+  const logout = useLogout();
   return (
     <div className={scss.sidebar}>
       <div className={scss.content}>
@@ -46,7 +48,7 @@ const Sidebar = () => {
           <AiOutlineFileDone fontSize={30} color="#001F54" />
           <p>Заказы</p>
         </div>
-        <div className={`${scss.logout}`}>
+        <div onClick={() => logout()} className={`${scss.logout}`}>
           <MdLogout fontSize={25} color="rgb(255, 91, 91)" />
           <p>Выйти</p>
         </div>
