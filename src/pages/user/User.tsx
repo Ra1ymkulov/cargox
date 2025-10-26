@@ -9,34 +9,28 @@ import { GrLocation } from "react-icons/gr";
 import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const User = () => {
-  const img =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIH-BVvr5QT15XFlYawi54nA0ayrqRmzVit_8AJ2E9MVOBQwQmtl79MiuUlHLRXiBEWk&usqp=CAU";
-  const defaultProfileImage =
-    "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small_2x/default-avatar-icon-of-social-media-user-vector.jpg";
   const { data: user } = useGetUserQuery();
-  console.log(user);
-
   return (
     <div className={scss.profile}>
       <div className={scss.user}>
-        <img src={img ? img : defaultProfileImage} alt="" />
+        <img src="/defeault-image-user.jpg" alt="dw" />
         <div className={scss.title}>
           <h2>{user?.fullName}</h2>
-          <i>@baby234123</i>
+          <i>@{user?.userName}</i>
         </div>
       </div>
       <div className={scss.listInfo}>
         <div className={scss.section}>
           <FaRegUser fontSize={20} color="#757575" />
-          <p>Baby Jhon</p>
+          <p>{user?.fullName}</p>
         </div>
         <div className={scss.section}>
           <MdOutlineAlternateEmail fontSize={20} color="#757575" />
-          <p>@baby234123</p>
+          <p>@{user?.userName}</p>
         </div>
         <div className={scss.section}>
           <IoMailOutline fontSize={20} color="#757575" />
-          <p>babyjhon2011@gmail.com</p>
+          <p>{user?.email}</p>
         </div>
         <div className={scss.section}>
           <FiPhone fontSize={20} color="#757575" />

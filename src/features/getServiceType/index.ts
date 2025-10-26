@@ -1,11 +1,12 @@
 import { AUTH_API } from "@/shared/api";
+import { SERVICE_API } from "@/shared/api/serviceApi";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetServiceType = () => {
   return useQuery({
     queryKey: ["service-type"],
     queryFn: async () => {
-      const { data } = await AUTH_API.get("/user/get-service-type");
+      const { data } = await SERVICE_API.get("/get-service-type");
       return data;
     },
     refetchOnWindowFocus: false,

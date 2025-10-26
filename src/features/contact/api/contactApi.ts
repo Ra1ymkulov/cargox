@@ -9,7 +9,6 @@ export const useContactApi = () => {
         "/message-contact-telegram",
         contact
       );
-      localStorage.setItem("contact", JSON.stringify(response.data.token));
       return response.data;
     },
     onSuccess: () => {

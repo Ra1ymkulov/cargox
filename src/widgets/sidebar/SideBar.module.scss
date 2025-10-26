@@ -3,19 +3,25 @@
   .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 30px 60px;
     height: 100%;
+    min-height: 90vh;
+    padding-block: 20px;
+    width: 320px;
+    align-items: center;
     .card {
       display: flex;
       align-items: center;
       gap: 20px;
+      padding-left: 40px;
       cursor: pointer;
-      padding: 15px 25px;
+      width: 250px;
+      height: 60px;
       p {
-        width: 100%;
         font-size: 16px;
         font-weight: 550;
+      }
+      &:active {
+        transform: scale(1.02);
       }
       &:hover {
         background-color: rgba(236, 236, 236, 1);
@@ -25,14 +31,19 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      padding-left: 40px;
       cursor: pointer;
-      padding: 15px 25px;
       margin-top: auto;
+      width: 250px;
+      height: 60px;
       p {
         width: 100%;
         font-size: 16px;
         font-weight: 550;
         color: rgb(255, 91, 91);
+      }
+      &:active {
+        transform: scale(1.02);
       }
       &:hover {
         background-color: rgba(255, 165, 165, 0.282);

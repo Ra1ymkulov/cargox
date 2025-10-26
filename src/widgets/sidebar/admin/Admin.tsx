@@ -9,10 +9,10 @@ const Admin = ({}) => {
   return (
     <div className={scss.admin}>
       <div className={scss.search}>
-        <div className={scss.icon}>
+        <button className={scss.icon}>
           <IoSearchSharp fontSize={17} />
           <p>Поиск</p>
-        </div>
+        </button>
         <input type="text" placeholder="Введите трек-код заказа" />
       </div>
       <div className={scss.content}>

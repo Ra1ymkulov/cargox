@@ -7,20 +7,19 @@ import { IoMailOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import { IoCameraOutline } from "react-icons/io5";
+import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const Setting = () => {
-  const img =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOeXLIMXu6a4LN5JT8G7CsXpIyBK5-VSJD5T4l5J3igN_9JjANsGakWBr72zu1vFgbgc&usqp=CAU";
-  const defaultProfileImage =
-    "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small_2x/default-avatar-icon-of-social-media-user-vector.jpg";
+  const { data: user } = useGetUserQuery();
+
   return (
     <div className={scss.setting}>
       <div className={scss.user}>
         <div className={scss.userInfo}>
-          <img src={img ? img : defaultProfileImage} alt="" />
+          <img src="/defeault-image-user.jpg" alt="dw" />
           <div className={scss.title}>
-            <h2>Baby Jhon</h2>
-            <i>@baby234123</i>
+            <h2>{user?.fullName}</h2>
+            <i>@{user?.userName}</i>
           </div>
         </div>
         <button>Сахранить</button>
