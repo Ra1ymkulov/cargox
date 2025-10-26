@@ -35,16 +35,16 @@ const Admin = ({}) => {
               <div className={scss.contentboxYellow}>
                 <div
                   className={scss.yellow}
-                  style={{
-                    backgroundColor:
-                      item.status === "CREATED"
-                        ? "rgba(0, 162, 255, 1)"
-                        : item.status === "IN_TRANSIT"
-                        ? "yellow"
-                        : item.status === "DELIVERED"
-                        ? "green"
-                        : "red",
-                  }}
+                  // style={{
+                  //   backgroundColor:
+                  //     item.status === "CREATED"
+                  //       ? "rgba(0, 162, 255, 1)"
+                  //       : item.status === "IN_TRANSIT"
+                  //       ? "yellow"
+                  //       : item.status === "DELIVERED"
+                  //       ? "green"
+                  //       : "red",
+                  // }}
                 ></div>
                 <p>{item.status}</p>
               </div>
