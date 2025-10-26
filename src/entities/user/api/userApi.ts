@@ -1,4 +1,4 @@
-import { USER_API } from "@/shared/api";
+import { USER_API } from "@/shared/api/userApi";
 import { useQuery } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
 interface Decode {

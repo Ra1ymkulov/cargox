@@ -1,4 +1,3 @@
-import { AUTH_API } from "@/shared/api";
 import { SERVICE_API } from "@/shared/api/serviceApi";
 import { useQuery } from "@tanstack/react-query";
 
