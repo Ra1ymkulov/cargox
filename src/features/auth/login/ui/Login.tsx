@@ -24,51 +24,62 @@ export const Login = () => {
   return (
     <div className={scss.login}>
       <div className="container">
-        <div className={scss.content}>
-          <h1>Войти</h1>
+        <div className={scss.main}>
+          <div className={scss.content}>
+            <h1>Войти</h1>
 
-          <form onSubmit={handleSubmit(onSubmit)} className={scss.getInfo}>
-            <div className={scss.input}>
-              <p>Введите имя пользователя или email</p>
-              <input
-                autoComplete="email"
-                {...register("email", {
-                  required: "имя или email обязателен!",
-                })}
-                type="email"
-              />
-            </div>
-            <div className={scss.input}>
-              <p>Введите пароль</p>
-              <input
-                autoComplete="current-password"
-                {...register("password", {
-                  required: "Пароль обязателен!",
+            <form onSubmit={handleSubmit(onSubmit)} className={scss.getInfo}>
+              <div className={scss.input}>
+                <p>Введите имя пользователя или email</p>
+                <input
+                  autoComplete="email"
+                  {...register("email", {
+                    required: "имя или email обязателен!",
+                  })}
+                  type="email"
+                />
+              </div>
+              <div className={scss.input}>
+                <p>Введите пароль</p>
+                <input
+                  autoComplete="current-password"
+                  {...register("password", {
+                    required: "Пароль обязателен!",
 
-                  minLength: {
-                    value: 6,
-                    message: "Пароль должен быть не меньше 6 символов!",
-                  },
-                })}
-                type={showPassword ? "text" : "password"}
-              />
-              {showPassword ? (
-                <FiEye
-                  className={scss.icon}
-                  onClick={() => setShowPassword(!setShowPassword)}
+                    minLength: {
+                      value: 6,
+                      message: "Пароль должен быть не меньше 6 символов!",
+                    },
+                  })}
+                  type={showPassword ? "text" : "password"}
                 />
-              ) : (
-                <FiEyeOff
-                  className={scss.icon}
-                  onClick={() => setShowPassword(!showPassword)}
-                />
-              )}
-            </div>
-            <button>Войти</button>
+                {showPassword ? (
+                  <FiEye
+                    className={scss.icon}
+                    onClick={() => setShowPassword(!setShowPassword)}
+                  />
+                ) : (
+                  <FiEyeOff
+                    className={scss.icon}
+                    onClick={() => setShowPassword(!showPassword)}
+                  />
+                )}
+              </div>
+              <button>Войти</button>
+              <p>
+                Нет аккаунта?
+                <Link href="/auth/register">Зарегистрируйтесь</Link>
+              </p>
+            </form>
+          </div>
+          <div className={scss.titleMain}>
+            <img src="/LogoCargoX.svg" alt="" />
+            <h1>Добро пожаловать обратно</h1>
             <p>
-              Нет аккаунта?<Link href="/auth/register">Зарегистрируйтесь</Link>
+              Войдите в систему, чтобы продолжить управление доставками и
+              получать уведомления в реальном времени.
             </p>
-          </form>
+          </div>
         </div>
       </div>
     </div>
