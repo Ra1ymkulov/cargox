@@ -1,0 +1,19 @@
+import { USER_API } from "@/shared/api";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+
+export const useContactApi = () => {
+  const queryClient = useQueryClient();
+  return useMutation<USERLOGIN.GetUserRes, Error, USERLOGIN.GetUserReq>({
+    mutationFn: async (contact) => {
+      const response = await USER_API.post(
+        "/message-contact-telegram",
+        contact
+      );
+      localStorage.setItem("contact", JSON.stringify(response.data.token));
+      return response.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["contact"] });
+    },
+  });
+};
