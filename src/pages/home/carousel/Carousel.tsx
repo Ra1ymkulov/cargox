@@ -1,14 +1,14 @@
 "use client";
 import React, { FC } from "react";
-import Slider, { Settings } from "react-slick";
 import scss from "./Carousel.module.scss";
 import Banner from "@/shared/ui/banner-card/Banner";
-import { useGetServiceType } from "@/features/getServiceType";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider, { Settings } from "react-slick";
+import { useGetServiceType } from "@/entities/service/api/serviceApi";
 
 const NextArrow = ({ onClick }: any) => (
   <button className={`${scss.arrow} ${scss.next}`} onClick={onClick}>
