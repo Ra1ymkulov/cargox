@@ -2,38 +2,33 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 20px 0;
+  padding: 26px;
+  height: 300px;
+
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+  max-width: 360px;
   h1 {
-    font-size: clamp(0.938rem, 0.824rem + 0.57vw, 1.25rem);
+    font-size: clamp(0.938rem, 0.869rem + 0.34vw, 1.125rem);
     font-weight: 500;
     line-height: 0.7;
-    padding: 0 20px;
+    padding: 0 4px 0;
+    width: 100%;
     span {
       color: #001f54;
       font-weight: 700;
+      font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
     }
   }
-  .line {
-    height: 1px;
-    width: 100%;
-    background-color: #001f5414;
-  }
   .info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
     font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
-    padding: 0 20px;
     p {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 30px;
       color: rgba(0, 0, 0, 0.5);
-      width: 49%;
+      width: 100%;
       min-width: 200px;
       padding: 0 5px 8px;
       font-weight: 600;
@@ -41,30 +36,14 @@
       span {
         color: #001f54;
         text-align: end;
+        font-size: 15px;
       }
     }
   }
   .where {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-inline: 20px;
-    margin-top: 30px;
-    .location {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      font-size: clamp(0.5rem, 0.386rem + 0.57vw, 0.813rem);
-      p:nth-child(2) {
-        margin-left: 15px;
-      }
-    }
-    img {
-      margin: 0 auto;
-      padding-right: 10px;
-      width: 94%;
-      object-fit: contain;
+    font-size: clamp(0.5rem, 0.386rem + 0.57vw, 0.813rem);
+    p:nth-child(2) {
+      margin-left: 15px;
     }
   }
 }
