@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import scss from "./DetailOrder.module.scss";
+
 const DetailOrder = () => {
   return (
     <div className={scss.detail}>
@@ -24,11 +26,7 @@ const DetailOrder = () => {
               Доставлено <strong></strong>
               <span>12:45</span>
             </p>
-            <p>
-              Время
-              <strong></strong>
-              <span>2мин</span>
-            </p>
+
             <p>
               Откуда
               <strong></strong>
