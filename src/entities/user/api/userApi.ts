@@ -1,7 +1,6 @@
 import { USER_API } from "@/shared/api";
 import { useQuery } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
-import { useUserStore } from "../model/userstore";
 interface Decode {
   id: string;
   email: string;
