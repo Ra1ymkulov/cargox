@@ -10,7 +10,6 @@ export const useChangeStatus = () => {
         status,
         userId,
       });
-
       return response.data;
     },
     onSuccess: () => {
