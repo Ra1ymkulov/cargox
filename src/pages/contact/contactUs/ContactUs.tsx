@@ -65,7 +65,7 @@ const ContactUs = () => {
             />
           </div>
           <div className={scss.ContactUsButton}>
-            <button>Отправить отзыв</button>
+            <button>Отправить контакт</button>
           </div>
         </form>
       </div>
