@@ -9,6 +9,8 @@ interface User {
   email: string;
   password: string;
   role: UserRole;
+  phone: string;
+  country: string;
   orders: OrderUser[];
   createdAt: Date;
   updatedAt: Date;

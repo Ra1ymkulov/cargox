@@ -3,7 +3,6 @@ import React from "react";
 import scss from "./ContactUs.module.scss";
 import { useContactApi } from "@/features/contact/api/contactApi";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
 
 interface IRegisterProps {
   phoneNumber: string;
@@ -13,7 +12,6 @@ interface IRegisterProps {
   message: string;
 }
 const ContactUs = () => {
-  const router = useRouter();
   const { handleSubmit, register, reset, formState, watch } =
     useForm<IRegisterProps>();
 
@@ -29,7 +27,6 @@ const ContactUs = () => {
     };
     DataPost(payload);
     reset();
-    router.push("/");
   }
 
   return (

@@ -1,7 +1,12 @@
+"use client";
 import React from "react";
 import scss from "./CreateOrder.module.scss";
+import { useCreateOrder } from "@/features/create-order";
+import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const CreateOrder = () => {
+  const { mutateAsync: createOrder } = useCreateOrder();
+  const { data: user } = useGetUserQuery();
   return (
     <div className={scss.create}>
       <div className={scss.content}>
@@ -41,7 +46,19 @@ const CreateOrder = () => {
               </div>
             </div>
           </div>
-          <button>Перейти к оплате</button>
+          <button
+            onClick={() =>
+              createOrder({
+                userId: user?.id,
+                fromCityId: "2weAstana-CargoX00",
+                toCityId: "6weMoscow-CargoX00",
+                weightKg: 40,
+                serviceTypeId: "4weShipDelivery00",
+              })
+            }
+          >
+            Перейти к оплате
+          </button>
         </div>
       </div>
     </div>
