@@ -23,15 +23,16 @@ export default function RootLayout({
   return (
     <>
       <head>
-        <link
+        {/* <link
           rel="shortcut icon"
           href="https://play-lh.googleusercontent.com/deIid8B-gffCIqVd3S0TxIXSzH9DrCcwJO-FmwwJNyPrVNZR0ufL0dv9JZt7N3PKWeI"
           type="image/x-icon"
-        />
+        /> */}
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/mainLogo.png" type="image/x-icon" />
       </head>
       <html lang="en">
         <body className={`${inter.className}`}>

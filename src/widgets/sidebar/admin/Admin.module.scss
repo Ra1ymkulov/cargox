@@ -24,6 +24,9 @@
       gap: 5px;
       border-radius: 20px 0 0 20px;
       color: white;
+      &:active {
+        transform: none;
+      }
     }
     input {
       background-color: #ececec;
@@ -33,38 +36,39 @@
       width: 100%;
     }
   }
-  .sortNav{
+  .sortNav {
     display: flex;
     justify-content: space-between;
     width: 100%;
     p {
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
       flex: 1;
-      display: flex;align-items: center;justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
       cursor: pointer;
       padding: 7px;
-    border-radius: 10px 10px 0 0 ;
-    &:hover{
-      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: 10px 10px 0 0;
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+      }
     }
-    }
-    button{
+    button {
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
       background: none;
       border-radius: 10px 10px 0 0;
       color: black;
       flex: 1;
-      &:hover{
+      &:hover {
         border: 1px solid rgba(0, 0, 0, 0.3);
       }
     }
   }
   .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-content: start;
+    gap: 30px;
   }
 }

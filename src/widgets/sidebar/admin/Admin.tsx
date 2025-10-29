@@ -10,12 +10,14 @@ const Admin = ({}) => {
   const [searchValue, setSearchValue] = useState("");
   const [tab, setTab] = useState("ALL");
 
+  const filteredBySearch = order?.filter((item) =>
+    item.trackingCode.toLowerCase().includes(searchValue)
+  );
 
-  const filteredBySearch = order?.filter((item) => item.trackingCode.toLowerCase().includes(searchValue))
-
-  const filteredOrders = order?.filter((item) => item.status === tab || tab === "ALL");
+  const filteredOrders = order?.filter(
+    (item) => item.status === tab || tab === "ALL"
+  );
   const resFilter = searchValue?.length ? filteredBySearch : filteredOrders;
-  console.log(resFilter);
 
   return (
     <div className={scss.admin}>
@@ -24,20 +26,72 @@ const Admin = ({}) => {
           <IoSearchSharp fontSize={17} />
           <p>Поиск</p>
         </button>
-        <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Введите трек-код заказа" />
-      </div>  
+        <input
+          onChange={(e) => setSearchValue(e.target.value)}
+          type="text"
+          placeholder="Введите трек-код заказа"
+        />
+      </div>
       <div className={scss.sortNav}>
-        <button onClick={() => setTab("ALL")} style={tab === "ALL" ?{backgroundColor:  "rgba(218, 218, 218, 1)" } : {}}>All</button>
-        <p onClick={() => setTab("CREATED")} style={tab === "CREATED" ?{backgroundColor:  "rgba(218, 218, 218, 1)" } : {}}>Создано</p>
-        <p onClick={() => setTab("IN_TRANSIT")} style={tab === "IN_TRANSIT" ?{backgroundColor:  "rgba(218, 218, 218, 1)" } : {}}>В пути</p>
-        <p onClick={() => setTab("DELIVERED")} style={tab === "DELIVERED" ?{backgroundColor:  "rgba(218, 218, 218, 1)" } : {}}>Доставлено</p>   
-        </div>
+        <button
+          onClick={() => setTab("ALL")}
+          style={
+            tab === "ALL" ? { backgroundColor: "rgba(218, 218, 218, 1)" } : {}
+          }
+        >
+          All
+        </button>
+        <p
+          onClick={() => setTab("CREATED")}
+          style={
+            tab === "CREATED"
+              ? { backgroundColor: "rgba(218, 218, 218, 1)" }
+              : {}
+          }
+        >
+          Создано
+        </p>
+        <p
+          onClick={() => setTab("IN_TRANSIT")}
+          style={
+            tab === "IN_TRANSIT"
+              ? { backgroundColor: "rgba(218, 218, 218, 1)" }
+              : {}
+          }
+        >
+          В пути
+        </p>
+        <p
+          onClick={() => setTab("DELIVERED")}
+          style={
+            tab === "DELIVERED"
+              ? { backgroundColor: "rgba(218, 218, 218, 1)" }
+              : {}
+          }
+        >
+          Доставлено
+        </p>
+        <p
+          onClick={() => setTab("CANCELED")}
+          style={
+            tab === "CANCELED"
+              ? { backgroundColor: "rgba(218, 218, 218, 1)" }
+              : {}
+          }
+        >
+          Отменено
+        </p>
+      </div>
 
       <div className={scss.content}>
-        {resFilter?.length ? resFilter?.map((item, idx) => (
-         <Card item={item} key={idx} setTab={setTab}/>
-        )): <p>Заказов нет</p>}
-      </div>  
+        {resFilter?.length ? (
+          resFilter?.map((item, idx) => (
+            <Card item={item} key={idx} setTab={setTab} />
+          ))
+        ) : (
+          <p>Заказов нет</p>
+        )}
+      </div>
     </div>
   );
 };
