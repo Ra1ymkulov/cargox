@@ -1,0 +1,3 @@
+namespace ALLSERVICE {
+  type GetAllServiceRes = {};
+}
