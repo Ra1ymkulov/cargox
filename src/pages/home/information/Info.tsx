@@ -11,6 +11,7 @@ const Info: FC = () => {
       end: 100000,
       duration: 4,
       btnData: "Посмотреть отзывы",
+      routers: "/reviews",
     },
     {
       text: "Доставляем грузы из Турции, Китая, США, Кореи и Европы.Быстро, надёжно и по лучшим маршрутам.",
@@ -19,6 +20,7 @@ const Info: FC = () => {
       end: 20,
       duration: 3,
       btnData: "Узнать маршруты",
+      routers: "/tariffs",
     },
     {
       text: "Опыт, доверие и профессионализм основа нашей работы. Мы развиваемся вместе с вами.",
@@ -27,6 +29,7 @@ const Info: FC = () => {
       duration: 1,
       end: 5,
       btnData: "Подробнее о нас",
+      routers: "/contact",
     },
   ];
   return (
@@ -41,6 +44,7 @@ const Info: FC = () => {
             end={item.end}
             duration={item.duration}
             key={idx}
+            routers={item.routers}
           />
         ))}
       </div>

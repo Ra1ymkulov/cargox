@@ -24,6 +24,9 @@
       gap: 5px;
       border-radius: 20px 0 0 20px;
       color: white;
+      &:active {
+        transform: none;
+      }
     }
     input {
       background-color: #ececec;
@@ -33,115 +36,39 @@
       width: 100%;
     }
   }
-  .content {
+  .sortNav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
-    .card {
+    width: 100%;
+    p {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      flex: 1;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      background: rgb(255, 255, 255);
-      box-shadow: 0 2 6px 0 rgb(0, 0, 0, 0.25);
-      border-radius: 10px;
-      padding: 20px;
-      .contentbox {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        .contentTeg {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          h1 {
-            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
-            font-weight: 400;
-          }
-          span {
-            font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
-            color: rgba(0, 31, 84, 1);
-            font-weight: 600;
-            padding-top: 5px;
-          }
-        }
-        .contentboxYellow {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          p {
-            font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
-          }
-          .yellow {
-            border: 1px solid black;
-            border-radius: 10px;
-            width: 12px;
-            height: 12px;
-            background: rgba(255, 217, 0, 1);
-          }
-        }
-      }
-      .contentOrder {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: 10px;
-        .contentPast {
-          display: flex;
-          flex-direction: column;
-          .contentPastTeg {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            span {
-              color: rgba(0, 0, 0, 0.52);
-              font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
-            }
-            p {
-              color: rgba(0, 31, 84, 1);
-              font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
-            }
-          }
-        }
-        .contentPrice {
-          display: flex;
-          flex-direction: column;
-          .contentPriceTeg {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            span {
-              font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
-              color: rgba(0, 0, 0, 0.52);
-            }
-            p {
-              color: rgba(0, 31, 84, 1);
-              font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
-            }
-          }
-        }
-      }
-      .contentWhoPostet {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        span {
-          color: rgba(0, 0, 0, 0.52);
-          font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
-        }
-        p {
-          color: rgba(0, 31, 84, 1);
-          font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
-        }
-      }
-      button {
-        background: rgba(236, 236, 236, 1);
-        padding: 10px;
-        font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
-        cursor: pointer;
-        color: rgba(0, 31, 84, 1);
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
+      cursor: pointer;
+      padding: 7px;
+      border-radius: 10px 10px 0 0;
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4);
       }
     }
+    button {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      background: none;
+      border-radius: 10px 10px 0 0;
+      color: black;
+      flex: 1;
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-content: start;
+    gap: 30px;
   }
 }

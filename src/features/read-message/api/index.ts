@@ -1,5 +1,5 @@
-import { ORDER_API } from "./../../../shared/api/index";
 
+import { ORDER_API } from "@/shared/api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const useReadMessage = () => {

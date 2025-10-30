@@ -1,4 +1,4 @@
-import Setting from "@/widgets/sidebar/setting/Setting";
+import Setting from "@/features/update-profile/ui/Setting";
 import React from "react";
 
 const page = () => <Setting />;

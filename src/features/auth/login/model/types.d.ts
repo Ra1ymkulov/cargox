@@ -1,6 +1,6 @@
 namespace USERLOGIN {
-  type GetUserReq = ILoginUser;
   type GetUserRes = IToken;
+  type GetUserReq = ILoginUser;
 }
 interface ILoginUser {
   email: string;

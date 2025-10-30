@@ -8,22 +8,20 @@ import { IoIosArrowBack } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider, { Settings } from "react-slick";
-import { useGetServiceType } from "@/entities/service/api/serviceApi";
+import { useGetServiceTypeQuery } from "@/entities/service-type/api/serviceTypeApi";
 
 const NextArrow = ({ onClick }: any) => (
   <button className={`${scss.arrow} ${scss.next}`} onClick={onClick}>
     <IoIosArrowForward />
   </button>
 );
-
 const PrevArrow = ({ onClick }: any) => (
   <button className={`${scss.arrow} ${scss.prev}`} onClick={onClick}>
     <IoIosArrowBack />
   </button>
 );
-
 const Carousel: FC = () => {
-  const { data: services, isLoading, error } = useGetServiceType();
+  const { data: services, isLoading } = useGetServiceTypeQuery();
 
   const settings: Settings = {
     dots: true,
@@ -42,29 +40,16 @@ const Carousel: FC = () => {
 
   if (isLoading)
     return (
-      <section className={scss.carousel}>
-        <div className="container">
-          <div className={scss.skeleton}>Загрузка баннеров...</div>
-        </div>
-      </section>
-    );
-
-  if (error || !services?.data?.length)
-    return (
-      <section className={scss.carousel}>
-        <div className="container">
-          <p className={scss.error}>
-            Ошибка при загрузке данных или данных нет
-          </p>
-        </div>
-      </section>
+      <div className="container">
+        <div className={scss.skeleton}>Загрузка баннеров...</div>
+      </div>
     );
 
   return (
     <section className={scss.carousel}>
       <img className={scss.back} src="/back-auto.svg" alt="" />
       <Slider {...settings}>
-        {services.data.map((item: any, idx: number) => (
+        {services?.map((item: any, idx: number) => (
           <div key={idx} className={scss.slide}>
             <Banner item={item} />
           </div>

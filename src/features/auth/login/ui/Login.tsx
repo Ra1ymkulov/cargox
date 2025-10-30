@@ -6,17 +6,14 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useLoginApi } from "../api/loginApi";
 import { useRouter } from "next/navigation";
-interface LoginTypeInput {
-  password: string;
-  email: string;
-}
+
 export const Login = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const { register, formState, reset, handleSubmit } =
-    useForm<LoginTypeInput>();
+    useForm<USERLOGIN.GetUserReq>();
   const { mutateAsync: DataPost } = useLoginApi();
-  function onSubmit(inputValues: LoginTypeInput) {
+  function onSubmit(inputValues: USERLOGIN.GetUserReq) {
     DataPost(inputValues);
     reset();
     router.push("/");
