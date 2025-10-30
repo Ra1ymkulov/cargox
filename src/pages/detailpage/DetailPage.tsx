@@ -12,10 +12,7 @@ const DetailPage = () => {
   const { data, isLoading } = useGetServiceTypeQuery();
   const params = useParams<Params>();
   const type = params?.type || null;
-  const element = data?.filter(
-    (item) =>
-      item.code.toLowerCase() === type || item.code.toLowerCase() === "ship\t"
-  );
+  const element = data?.filter((item) => item.code.toLowerCase() === type);
 
   return !isLoading ? (
     element?.map((item, idx) => (

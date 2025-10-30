@@ -11,6 +11,7 @@ interface BannerProps {
         title: string;
       }[];
     };
+    code: string;
   };
 }
 
@@ -28,7 +29,9 @@ const Banner: FC<BannerProps> = ({ item }) => {
         ))}
       </div>
 
-      <button onClick={() => router.push("/detail")}>Подробнее</button>
+      <button onClick={() => router.push(`/detail/${item.code}`)}>
+        Подробнее
+      </button>
     </div>
   );
 };
