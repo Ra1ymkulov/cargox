@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import scss from "./RoadTransport.module.scss";
+import { useRouter } from "next/navigation";
 const RoadTransport = () => {
+  const router = useRouter();
   return (
     <div id={scss.service}>
       <div className="container">
@@ -97,7 +99,9 @@ const RoadTransport = () => {
             </div>
           </div>
           <div className={scss.btn}>
-            <button>Перейти к оформлению</button>
+            <button onClick={() => router.push("/create-order")}>
+              Перейти к оформлению
+            </button>
           </div>
         </div>
       </div>

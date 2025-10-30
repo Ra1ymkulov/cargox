@@ -1,6 +1,7 @@
 import { FC } from "react";
 import scss from "./Banner.module.scss";
 import { Typewriter } from "react-simple-typewriter";
+import { useRouter } from "next/navigation";
 
 const Banner: FC = () => {
   const words = [
@@ -15,6 +16,7 @@ const Banner: FC = () => {
     "Рассчитайте доставку и отправьте груз по всему миру — легко и быстро",
     "Оформите доставку за минуту — от расчёта до запуска",
   ];
+  const router = useRouter();
   return (
     <section className={scss.banner}>
       <img
@@ -36,7 +38,9 @@ const Banner: FC = () => {
                 cursor={true}
               />
             </h1>
-            <button>Узнать стоимость</button>
+            <button onClick={() => router.push("/knowprice")}>
+              Узнать стоимость
+            </button>
           </div>
         </div>
       </div>

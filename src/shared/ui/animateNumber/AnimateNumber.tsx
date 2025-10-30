@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import scss from "./AnimateNumber.module.scss";
+import { useRouter } from "next/navigation";
 
 interface AnimateNumberProps {
   end: number;
@@ -10,6 +11,7 @@ interface AnimateNumberProps {
   title?: string;
   btnData?: string;
   imgUrl: string;
+  routers: string;
 }
 
 const AnimateNumber: React.FC<AnimateNumberProps> = ({
@@ -19,10 +21,11 @@ const AnimateNumber: React.FC<AnimateNumberProps> = ({
   title,
   btnData,
   imgUrl,
+  routers,
 }) => {
   const [startCount, setStartCount] = useState(false);
   const counterRef = useRef<HTMLDivElement | null>(null);
-
+  const router = useRouter();
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,7 +54,9 @@ const AnimateNumber: React.FC<AnimateNumberProps> = ({
         +{title}
       </h2>
       <p>{text}</p>
-      {btnData && <button>{btnData}</button>}
+      {btnData && (
+        <button onClick={() => router.push(routers)}>{btnData}</button>
+      )}
     </div>
   );
 };

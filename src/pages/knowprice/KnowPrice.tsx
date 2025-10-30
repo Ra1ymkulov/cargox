@@ -1,15 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import scss from "./CreateOrder.module.scss";
-import { useCreateOrder } from "@/features/create-order";
-import { useGetUserQuery } from "@/entities/user/api/userApi";
-import { useGetAllServiceQuery } from "@/entities/all-service/api/allService";
+import React, { useState } from "react";
+import scss from "./KnowPrice.module.scss";
 import { useGetServiceTypeQuery } from "@/entities/service-type/api/serviceTypeApi";
+import { useGetAllServiceQuery } from "@/entities/all-service/api/allService";
 import { useGetCalculatePriceQuery } from "@/entities/calculate/api/calculatePrice";
-const CreateOrder = () => {
+import { useRouter } from "next/navigation";
+
+const KnowPrice = () => {
+  const router = useRouter();
   const [price, setPrice] = useState<number>(0);
-  const { mutateAsync: createOrder } = useCreateOrder();
-  const { data: user } = useGetUserQuery();
   const { data: allService } = useGetAllServiceQuery();
   const { data: serviceType } = useGetServiceTypeQuery();
   const [toCity, setToCity] = useState<string>("");
@@ -17,32 +16,28 @@ const CreateOrder = () => {
   const [serviceTypeState, setServiceTypeState] = useState<string>("");
   const [weight, setWeight] = useState<number>(0);
   const { mutateAsync: calculatePrice } = useGetCalculatePriceQuery();
-  useEffect(() => {
-    const handleCalculate = async () => {
-      if (!fromCity || !toCity || !serviceTypeState || !weight) {
-        return;
-      }
-      try {
-        const res = await calculatePrice({
-          fromCityId: fromCity,
-          toCityId: toCity,
-          weightKg: weight,
-          serviceTypeId: serviceTypeState,
-        });
-        setPrice(res.price);
-      } catch (error) {
-        console.error("Ошибка при расчёте цены:", error);
-        setPrice(0);
-      }
-    };
-
-    handleCalculate();
-  }, [fromCity, toCity, serviceTypeState, weight]);
+  const handleCalculate = async () => {
+    if (!fromCity || !toCity || !serviceTypeState || !weight) {
+      return;
+    }
+    try {
+      const res = await calculatePrice({
+        fromCityId: fromCity,
+        toCityId: toCity,
+        weightKg: weight,
+        serviceTypeId: serviceTypeState,
+      });
+      setPrice(res.price);
+    } catch (error) {
+      console.error("Ошибка при расчёте цены:", error);
+      setPrice(0);
+    }
+  };
   return (
     <div className={scss.create}>
       <div className={scss.content}>
         <div className={scss.title}>
-          <h3>Оформление заказа</h3>
+          <h3>Калькулятор рассчетов</h3>
         </div>
         <div className={scss.inputs}>
           <div className={scss.flex}>
@@ -95,23 +90,21 @@ const CreateOrder = () => {
               </div>
             </div>
           </div>
-          <button
-            onClick={() =>
-              createOrder({
-                userId: user?.id,
-                fromCityId: fromCity,
-                toCityId: toCity,
-                weightKg: weight,
-                serviceTypeId: serviceTypeState,
-              })
-            }
-          >
-            Перейти к оплате
-          </button>
+          <div className={scss.blockButton}>
+            <button onClick={() => handleCalculate()} className={scss.btnone}>
+              Узнать стоимость
+            </button>
+            <button
+              onClick={() => router.push("/create-order")}
+              className={scss.btntwo}
+            >
+              Перейти к оформлению
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CreateOrder;
+export default KnowPrice;
