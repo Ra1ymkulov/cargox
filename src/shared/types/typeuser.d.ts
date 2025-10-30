@@ -1,3 +1,4 @@
+import { Notification } from "@/widgets/sidebar/notification/Notification";
 interface INotification {
   id: string;
 }
@@ -19,6 +20,14 @@ enum UserRole {
   ADMIN = "ADMIN",
   CLIENT = "CLIENT",
 }
+interface Notification {
+  id: string;
+  userId: string;
+  orderId: string;
+  message: string;
+  read: false;
+}
+
 interface OrderUser {
   id: string;
   userId: string;
