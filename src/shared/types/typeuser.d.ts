@@ -20,7 +20,7 @@ enum UserRole {
   CLIENT = "CLIENT",
 }
 interface OrderUser {
-  id: number;
+  id: string;
   userId: string;
   createdAt: Date;
   weightKg: number;

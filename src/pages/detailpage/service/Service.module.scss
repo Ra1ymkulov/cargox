@@ -35,10 +35,10 @@
         .time {
           display: flex;
           align-items: center;
-          gap: 200px;
           justify-content: space-between;
-          max-width: 440px;
+          gap: 10px;
           width: 100%;
+          max-width: 300px;
           p {
             font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
           }
@@ -60,9 +60,9 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-right: 15px;
-          max-width: 450px;
+          padding-right: 25px;
           width: 100%;
+          max-width: 300px;
 
           p {
             font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);

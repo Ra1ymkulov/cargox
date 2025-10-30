@@ -6,7 +6,7 @@ interface IModalProps {
   closeModal: () => void;
   setTab: (tab: string) => void;
   status: OrderStatus;
-  itemId: number;
+  itemId: string;
   userId: string;
 }
 const Modal: FC<IModalProps> = ({

@@ -1,13 +1,26 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import scss from "./Banner.module.scss";
-const Banner = () => {
+
+export interface IServiceProps {
+  item: {
+    code: string;
+    deliveryTime: string;
+    description: { info: { title: string; text: string }[] };
+    id: string;
+    name: string;
+    priceKm: number;
+    pricekg: number;
+  };
+}
+
+const Banner: FC<IServiceProps> = ({ item }) => {
   return (
     <div id={scss.BannerMain}>
       <img className={scss.detailBannerimage} src="/fura%203.svg" alt="" />
       <div className="container">
         <div className={scss.BannerMain}>
-          <h1>Железнодорожные перевозки</h1>
+          <h1>{item.name}</h1>
           <div className={scss.inputCalculatorMain}>
             <p>Калькулятор:</p>
             <div className={scss.inputCalculator}>

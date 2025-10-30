@@ -21,7 +21,7 @@ const PrevArrow = ({ onClick }: any) => (
   </button>
 );
 const Carousel: FC = () => {
-  const { data: services, isLoading, error } = useGetServiceTypeQuery();
+  const { data: services, isLoading } = useGetServiceTypeQuery();
 
   const settings: Settings = {
     dots: true,
@@ -44,7 +44,6 @@ const Carousel: FC = () => {
         <div className={scss.skeleton}>Загрузка баннеров...</div>
       </div>
     );
-  console.log(services?.map((item) => item));
 
   return (
     <section className={scss.carousel}>
