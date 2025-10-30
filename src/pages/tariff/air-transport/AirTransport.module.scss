@@ -3,25 +3,25 @@
   .service {
     display: flex;
     flex-direction: column;
+    gap: 30px;
     h1 {
       font-size: clamp(1.563rem, 1.335rem + 1.14vw, 2.188rem);
     }
     .serviceTitle {
       display: flex;
       flex-direction: column;
-      gap: 20px;
       .title {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 70px;
+        gap: 20px;
+        margin-bottom: 10px;
         h6 {
           font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
         }
         .time {
           display: flex;
           align-items: center;
-          gap: 200px;
           justify-content: space-between;
           max-width: 440px;
           width: 100%;
@@ -31,14 +31,34 @@
           span {
             font-size: clamp(1.25rem, 1.136rem + 0.57vw, 1.563rem);
           }
+          @media (max-width: 890px) {
+            max-width: 345px;
+          }
+          @media (max-width: 776px) {
+            max-width: 295px;
+          }
+          @media (max-width: 710px) {
+            width: 100%;
+            max-width: 250px;
+          }
+          @media (max-width: 483px) {
+            width: 100%;
+            max-width: 200px;
+          }
+          @media (max-width: 410px) {
+            width: 100%;
+            max-width: 180px;
+          }
         }
       }
       .paste {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid black;
-        padding-block: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.201);
+        padding-block: 15px;
+        gap: 20px;
+
         h5 {
           font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
         }
@@ -55,6 +75,24 @@
           }
           span {
             font-size: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
+          }
+          @media (max-width: 908px) {
+            max-width: 350px;
+          }
+          @media (max-width: 776px) {
+            max-width: 300px;
+          }
+          @media (max-width: 709px) {
+            width: 100%;
+            max-width: 250px;
+          }
+          @media (max-width: 483px) {
+            width: 100%;
+            max-width: 200px;
+          }
+          @media (max-width: 410px) {
+            width: 100%;
+            max-width: 180px;
           }
         }
       }
