@@ -6,7 +6,9 @@ const useGetAllServiceQuery = () => {
     queryKey: [`/all-service`],
     queryFn: async () => {
       const response = await ORDER_API.get(`/get-all-service`);
-      return response.data;
+      if (response.data.data) {
+        return response.data.data;
+      }
     },
   });
 };

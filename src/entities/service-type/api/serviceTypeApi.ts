@@ -6,7 +6,7 @@ const useGetServiceTypeQuery = () => {
     queryKey: [`/service-type`],
     queryFn: async () => {
       const response = await ORDER_API.get(`/get-service-type`);
-      return response.data;
+      return response.data.data;
     },
   });
 };
