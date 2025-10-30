@@ -1,6 +1,6 @@
 namespace STATUS {
   type GetStatusReq = {
-    id: number;
+    id: string;
     status: OrderStatus;
     userId: string;
   };
