@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const useGetAllOrdersQuery = () => {
   return useQuery<ORDER.GetOrder, Error>({
-    queryKey: ["order"],
+    queryKey: ["/order"],
     queryFn: async () => {
       const response = await ORDER_API.get("/get-all-order");
       return response.data.getOrder;
