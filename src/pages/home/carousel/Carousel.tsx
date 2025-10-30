@@ -40,28 +40,17 @@ const Carousel: FC = () => {
 
   if (isLoading)
     return (
-      <section className={scss.carousel}>
-        <div className="container">
-          <div className={scss.skeleton}>Загрузка баннеров...</div>
-        </div>
-      </section>
+      <div className="container">
+        <div className={scss.skeleton}>Загрузка баннеров...</div>
+      </div>
     );
-  if (error || !services?.data?.description?.info?.length)
-    return (
-      <section className={scss.carousel}>
-        <div className="container">
-          <p className={scss.error}>
-            Ошибка при загрузке данных или данных нет
-          </p>
-        </div>
-      </section>
-    );
+  console.log(services?.map((item) => item));
 
   return (
     <section className={scss.carousel}>
       <img className={scss.back} src="/back-auto.svg" alt="" />
       <Slider {...settings}>
-        {services.data.description.info.map((item: any, idx: number) => (
+        {services?.map((item: any, idx: number) => (
           <div key={idx} className={scss.slide}>
             <Banner item={item} />
           </div>
