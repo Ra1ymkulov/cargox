@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
 import scss from "./ContactBanner.module.scss";
+
 const ContactBanner = () => {
   return (
-    <div id={scss.bannerMain}>
-      <img className={scss.detailBannerimage} src="/fura%203.svg" alt="" />
+    <div className={scss.banner}>
+      <img
+        className={scss.detailBannerimage}
+        src="/fura%203.svg"
+        alt="Banner"
+      />
       <div className="container">
         <div className={scss.bannerMain}>
           <h1>Контакты & Саппорт</h1>
@@ -12,7 +17,15 @@ const ContactBanner = () => {
             помочь вам в решении возникшей проблемы. Пожалуйста, уточните
             следующие детали:
           </p>
-          <button>Оставить отзыв</button>
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Оставить контакт
+          </button>
         </div>
       </div>
     </div>
