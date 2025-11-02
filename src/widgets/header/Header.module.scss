@@ -46,6 +46,25 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  .userCounter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    .counter {
+      position: absolute;
+      top: -4px;
+      right: -3px;
+      background: red;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      font-size: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .burgerMenu {

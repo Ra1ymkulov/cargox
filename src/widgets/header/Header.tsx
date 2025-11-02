@@ -6,16 +6,20 @@ import { FiBell, FiMenu } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import scss from "./Header.module.scss";
+import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const Header = () => {
   const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const { data: user } = useGetUserQuery();
   const items = [
     { name: "Тарифы", path: "/tariffs" },
     { name: "Отзывы", path: "/reviews" },
     { name: "Контакты", path: "/contact" },
   ];
+  const counter = user?.notifications.filter(
+    (item) => item.read === !true
+  ).length;
 
   return (
     <>
@@ -39,12 +43,15 @@ const Header = () => {
             </nav>
 
             <div className={scss.user}>
-              <FiBell
-                fontSize={22}
-                color="white"
-                style={{ cursor: "pointer" }}
-                onClick={() => router.push("/user/notification")}
-              />
+              <div className={scss.userCounter}>
+                <FiBell
+                  fontSize={22}
+                  color="white"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => router.push("/user/notification")}
+                />
+                {counter === 0 ? "" : <p className={scss.counter}>{}</p>}
+              </div>
               <FaRegUser
                 fontSize={20}
                 color="white"
