@@ -19,6 +19,7 @@ const Admin = ({}) => {
     (item) => item.status === tab || tab === "ALL"
   );
   const resFilter = searchValue?.length ? filteredBySearch : filteredOrders;
+  console.log(order);
 
   return (
     <div className={scss.admin}>
