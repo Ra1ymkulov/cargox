@@ -12,6 +12,16 @@ const DetailOrder = () => {
   const data = user?.notifications
     ?.filter((el) => el.id === id)
     .map((item) => item.order);
+
+  const sliceCityId = (city: string) => {
+    const res = `${city.slice(3, -9)}`;
+    return res;
+  };
+
+  const sliceServiceId = (city: string) => {
+    const res = `${city.slice(3, -10)}`;
+    return res;
+  };
   return (
     <div className={scss.detail}>
       {data?.map((el, index) => (
@@ -40,17 +50,17 @@ const DetailOrder = () => {
               <p>
                 Откуда
                 <strong></strong>
-                <span>{el.fromCityId}</span>
+                <span>{sliceCityId(el.fromCityId)}</span>
               </p>
               <p>
                 Куда
                 <strong></strong>
-                <span>{el.toCityId}</span>
+                <span>{sliceCityId(el.toCityId)}</span>
               </p>
               <p>
                 Группаперевозки
                 <strong></strong>
-                <span>{el.serviceTypeId}</span>
+                <span>{sliceServiceId(el.serviceTypeId)}</span>
               </p>
               <p>
                 Кому

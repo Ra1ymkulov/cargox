@@ -3,9 +3,10 @@ import React, { FC } from "react";
 import scss from "./Service.module.scss";
 import { IServiceProps } from "../banner/Banner";
 import { useGetAllServiceQuery } from "@/entities/all-service/api/allService";
+import { useRouter } from "next/navigation";
 const Service: FC<IServiceProps> = ({ item }) => {
-  const { data, isLoading } = useGetAllServiceQuery();
-  console.log(data);
+  const { data } = useGetAllServiceQuery();
+  const router = useRouter();
 
   return (
     <div id={scss.service}>
@@ -32,7 +33,9 @@ const Service: FC<IServiceProps> = ({ item }) => {
             ))}
           </div>
           <div className={scss.btn}>
-            <button>Перейти к оформлению</button>
+            <button onClick={() => router.push("/knowprice")}>
+              Перейти к оформлению
+            </button>
           </div>
         </div>
       </div>

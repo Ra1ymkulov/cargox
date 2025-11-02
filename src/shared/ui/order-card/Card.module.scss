@@ -22,6 +22,9 @@
   }
   .info {
     font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     p {
       display: flex;
       justify-content: space-between;

@@ -19,6 +19,7 @@ const ContactUs = () => {
 
   function onSubmit(inputValue: IRegisterProps) {
     dataPost(inputValue);
+
     reset();
   }
 
@@ -94,7 +95,7 @@ const ContactUs = () => {
             </div>
           </div>
           <div className={scss.contactUsButton}>
-            <button>Отправить контакт</button>
+            <button type="submit">Отправить контакт</button>
           </div>
         </form>
       </div>

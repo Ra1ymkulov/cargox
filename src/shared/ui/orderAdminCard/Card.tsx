@@ -4,7 +4,6 @@ import { FiBox } from "react-icons/fi";
 import { FC, useState } from "react";
 import Modal from "../modalChangeStatus/Modal";
 import { useDelOrder } from "@/features/delOrder/api/deleteOrder";
-import { OrderUser } from "@/shared/types/typeuser";
 interface ICardProps {
   item: OrderUser;
   setTab: (tab: string) => void;
@@ -64,6 +63,7 @@ const Card: FC<ICardProps> = ({ item, setTab }) => {
       <button
         onClick={() => {
           delOrder(item.id);
+          console.log(item.id);
         }}
       >
         Удалить заказ

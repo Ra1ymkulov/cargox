@@ -31,7 +31,7 @@ const Card: FC<any> = ({ data }) => {
         </p>
         <p>
           Доставлен:
-          <span>-- -- --</span>
+          <span>{data.status}</span>
         </p>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import { useChangeStatus } from "@/features/status/api/statusApi";
 import scss from "./Modal.module.scss";
 import { FC, useState } from "react";
-import { OrderStatus } from "@/shared/types/typeuser";
 
 interface IModalProps {
   closeModal: () => void;
