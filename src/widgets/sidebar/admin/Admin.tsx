@@ -29,7 +29,7 @@ const Admin = ({}) => {
           <p>Поиск</p>
         </button>
         <input
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e) => setSearchValue(e.target.value.toLowerCase())}
           type="text"
           placeholder="Введите трек-код заказа"
         />
