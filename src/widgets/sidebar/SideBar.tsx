@@ -47,7 +47,7 @@ const Sidebar = () => {
             <LuUserRoundCog fontSize={30} color="#001F54" />
             <p>Настройки</p>
           </div>
-          {user?.email === "swity-fox@gmail.com" ? (
+          {user?.email === "motionwebadmin@gmail.com" ? (
             <div
               onClick={() => router.push("/user/create")}
               className={`${scss.card}`}
