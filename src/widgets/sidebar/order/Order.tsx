@@ -7,7 +7,6 @@ import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const Order = () => {
   const { data: user } = useGetUserQuery();
-
   return (
     <div className={scss.order}>
       <div className={scss.search}>
@@ -18,8 +17,8 @@ const Order = () => {
         <input type="text" placeholder="Введите трек-код заказа" />
       </div>
       <div className={scss.list}>
-        {user?.orders.map((item, idx) => (
-          <Card data={item} key={idx} />
+        {user?.orders?.map((item, index) => (
+          <Card data={item} key={index} />
         ))}
       </div>
     </div>

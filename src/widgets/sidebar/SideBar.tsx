@@ -1,7 +1,6 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import scss from "./SideBar.module.scss";
-import { FaRegUser } from "react-icons/fa";
 import { LuBell } from "react-icons/lu";
 import { LuUserRoundCheck } from "react-icons/lu";
 import { MdLogout } from "react-icons/md";
@@ -9,10 +8,12 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import { AiOutlineFileText } from "react-icons/ai";
 import { LuUserRoundCog } from "react-icons/lu";
 import { useLogout } from "@/features/auth/logout/logout";
+import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const Sidebar = () => {
   const router = useRouter();
   const logout = useLogout();
+  const { data: user } = useGetUserQuery();
   return (
     <div className={scss.sidebar}>
       <div className={scss.content}>
@@ -42,13 +43,17 @@ const Sidebar = () => {
             <LuUserRoundCog fontSize={30} color="#001F54" />
             <p>Настройки</p>
           </div>
-          <div
-            onClick={() => router.push("/user/create")}
-            className={`${scss.card}`}
-          >
-            <AiOutlineFileDone fontSize={30} color="#001F54" />
-            <p>Заказы</p>
-          </div>
+          {user?.email === "swity-fox@gmail.com" ? (
+            <div
+              onClick={() => router.push("/user/create")}
+              className={`${scss.card}`}
+            >
+              <AiOutlineFileDone fontSize={30} color="#001F54" />
+              <p>Заказы</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div onClick={() => logout()} className={`${scss.logout}`}>
           <MdLogout fontSize={25} color="rgb(255, 91, 91)" />

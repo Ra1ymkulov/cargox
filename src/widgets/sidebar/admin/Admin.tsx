@@ -7,6 +7,7 @@ import Card from "@/shared/ui/orderAdminCard/Card";
 
 const Admin = ({}) => {
   const { data: order } = useGetAllOrdersQuery();
+
   const [searchValue, setSearchValue] = useState("");
   const [tab, setTab] = useState("ALL");
 
