@@ -1,11 +1,10 @@
-#ContactTitle {
+.contactTitle {
   padding-block: 40px;
   .box {
     display: flex;
     flex-direction: column;
 
-    .ContactTitle {
-      padding-block: 30px;
+    .contactTitle {
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -15,12 +14,17 @@
       .support {
         display: flex;
         flex-direction: column;
-        gap: 20px;
         .title {
-          span {
-            font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem);
-          }
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+          padding: 12px 10px;
           p {
+            font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+            min-width: 90px;
+          }
+          span {
             font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
           }
           display: flex;
@@ -46,5 +50,10 @@
         }
       }
     }
+  }
+}
+@media (max-width: 500px) {
+  .title span {
+    text-align: end;
   }
 }

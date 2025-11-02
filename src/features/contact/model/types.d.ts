@@ -1,11 +1,10 @@
 namespace USERLOGIN {
-  type GetUserReq = ILoginUser;
   type GetUserRes = void;
+  type GetUserReq = ILoginUser;
 }
 interface ILoginUser {
   userName: string;
   email: string;
-  text: string;
   password: string;
   message: string;
 }

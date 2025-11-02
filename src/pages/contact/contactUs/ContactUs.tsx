@@ -12,57 +12,89 @@ interface IRegisterProps {
   message: string;
 }
 const ContactUs = () => {
-  const { handleSubmit, register, reset, formState, watch } =
+  const { handleSubmit, register, reset, formState } =
     useForm<IRegisterProps>();
 
-  const { mutateAsync: DataPost } = useContactApi();
+  const { mutateAsync: dataPost } = useContactApi();
 
-  function onSubmit(contact: IRegisterProps) {
-    const payload: ILoginUser = {
-      userName: contact.userName ?? "",
-      email: contact.email ?? "",
-      text: contact.message ?? "",
-      password: contact.password ?? "",
-      message: contact.message ?? "",
-    };
-    DataPost(payload);
+  function onSubmit(inputValue: IRegisterProps) {
+    dataPost(inputValue);
     reset();
   }
 
   return (
-    <div id={scss.ContactUs}>
+    <div className={scss.contact} id="contact">
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)} className={scss.ContactUs}>
-          <h1>Связаться с нами:</h1>
-          <div className={scss.ContactUsArea}>
-            <div className={scss.ContactUsInput}>
+        <form onSubmit={handleSubmit(onSubmit)} className={scss.contactUs}>
+          <h1>Связаться с нами</h1>
+          <div className={scss.contactUsArea}>
+            <div className={scss.contactUsInput}>
+              {formState.errors.userName && (
+                <span className={scss.error}>
+                  {formState.errors.userName.message}
+                </span>
+              )}
               <input
+                style={{ borderColor: formState.errors.userName ? "red" : "" }}
                 {...register("userName", {
                   required: "Имя обязательно!",
                 })}
                 placeholder="Введите имя"
                 type="text"
               />
+              {formState.errors.phoneNumber && (
+                <span className={scss.error}>
+                  {formState.errors.phoneNumber.message}
+                </span>
+              )}
               <input
+                style={{
+                  borderColor: formState.errors.phoneNumber ? "red" : "",
+                }}
                 {...register("phoneNumber", {
-                  required: "Имя обязательно!",
+                  required: "Телефон обязательно!",
                 })}
                 placeholder="Номер телефона"
                 type="text"
               />
+              {formState.errors.email && (
+                <span className={scss.error}>
+                  {formState.errors.email.message}
+                </span>
+              )}
               <input
-                {...register("email")}
+                style={{ borderColor: formState.errors.email ? "red" : "" }}
+                {...register("email", {
+                  required: "Email обязательно!",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Неверный формат email",
+                  },
+                })}
                 placeholder="Введите email"
-                type="text"
+                type="email"
               />
             </div>
-            <textarea
-              {...register("message")}
-              placeholder="Введите текст о проблеме"
-            />
+            <div className={scss.textarea}>
+              {formState.errors.message && (
+                <span className={scss.error}>
+                  {formState.errors.message.message}
+                </span>
+              )}
+              <textarea
+                style={{
+                  borderColor: formState.errors.message ? "red" : "",
+                  color: formState.errors.message ? "red" : "",
+                }}
+                {...register("message", {
+                  required: "Заполните поле!",
+                })}
+                placeholder="Введите текст о проблеме"
+              />
+            </div>
           </div>
-          <div className={scss.ContactUsButton}>
-            <button>Отправить отзыв</button>
+          <div className={scss.contactUsButton}>
+            <button>Отправить контакт</button>
           </div>
         </form>
       </div>

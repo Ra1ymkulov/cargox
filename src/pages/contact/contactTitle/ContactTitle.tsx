@@ -2,43 +2,43 @@ import React from "react";
 import scss from "./ContactTitle.module.scss";
 const ContactTitle = () => {
   return (
-    <div id={scss.ContactTitle}>
+    <div className={scss.contactTitle}>
       <div className="container">
         <div className={scss.box}>
-          <div className={scss.ContactTitle}>
+          <div className={scss.contactTitle}>
             <h1>Контакты:</h1>
             <div className={scss.support}>
               <div className={scss.title}>
-                <span>Email поддержки:</span>
-                <p>support@figma.com help.figma.com+2crunchbase.com+2</p>
+                <p>Email поддержки:</p>
+                <span>support@figma.com help.figma.com+2crunchbase.com+2</span>
               </div>
               <div className={scss.title}>
-                <span>Email по:</span>
-                <p>
+                <p>Email по:</p>
+                <span>
                   вопросам счетов и выставления счетов (invoices):
                   invoices@figma.com figma-signup.helpjuice.com
-                </p>
+                </span>
               </div>
               <div className={scss.title}>
-                <span>Email по:</span>
-                <p>
+                <p>Email по:</p>
+                <span>
                   вопросам безопасности и нарушений: abuse@figma.com
                   figma-signup.helpjuice.com
-                </p>
+                </span>
               </div>
               <div className={scss.title}>
-                <span>Email по:</span>
-                <p>
+                <p>Email по:</p>
+                <span>
                   вопросам конфиденциальности: privacy@figma.com
                   figma-signup.helpjuice.com+1
-                </p>
+                </span>
               </div>
               <div className={scss.title}>
-                <span>Адрес головного офиса:</span>
-                <p>
+                <p>Адрес головного офиса:</p>
+                <span>
                   Figma, Inc.760 Market St, Floor 10 San Francisco, CA 94102
                   Соединённые Штаты Америки
-                </p>
+                </span>
               </div>
             </div>
           </div>
