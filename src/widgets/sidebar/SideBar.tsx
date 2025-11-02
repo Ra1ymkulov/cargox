@@ -14,6 +14,9 @@ const Sidebar = () => {
   const router = useRouter();
   const logout = useLogout();
   const { data: user } = useGetUserQuery();
+  const counter = user?.notifications.filter(
+    (item) => item.read === !true
+  ).length;
   return (
     <div className={scss.sidebar}>
       <div className={scss.content}>
@@ -35,6 +38,7 @@ const Sidebar = () => {
           >
             <LuBell fontSize={30} color="#001F54" />
             <p>Уведовление</p>
+            {counter === 0 ? "" : <p className={scss.counter}></p>}
           </div>
           <div
             onClick={() => router.push("/user/setting")}
