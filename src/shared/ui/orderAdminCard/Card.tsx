@@ -4,6 +4,7 @@ import { FiBox } from "react-icons/fi";
 import { FC, useState } from "react";
 import Modal from "../modalChangeStatus/Modal";
 import { useDelOrder } from "@/features/delOrder/api/deleteOrder";
+import { OrderUser } from "@/shared/types/typeuser";
 interface ICardProps {
   item: OrderUser;
   setTab: (tab: string) => void;
@@ -17,7 +18,6 @@ const Card: FC<ICardProps> = ({ item, setTab }) => {
     const res = `${city.slice(3, -9)}`;
     return res;
   };
-  console.log(typeof item.id);
 
   return (
     <div className={scss.card}>
@@ -61,7 +61,13 @@ const Card: FC<ICardProps> = ({ item, setTab }) => {
         <p>{user?.fullName}</p>
       </div>
       <button onClick={() => setModalShow(true)}>Изменить статус</button>
-      <button onClick={() => delOrder(item.id)}>Удалить заказ</button>
+      <button
+        onClick={() => {
+          delOrder(item.id);
+        }}
+      >
+        Удалить заказ
+      </button>
       {modalShow && (
         <Modal
           closeModal={() => setModalShow(false)}
