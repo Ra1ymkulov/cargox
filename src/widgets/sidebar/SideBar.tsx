@@ -1,7 +1,6 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import scss from "./SideBar.module.scss";
-import { FaRegUser } from "react-icons/fa";
 import { LuBell } from "react-icons/lu";
 import { LuUserRoundCheck } from "react-icons/lu";
 import { MdLogout } from "react-icons/md";
