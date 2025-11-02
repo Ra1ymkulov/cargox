@@ -6,6 +6,7 @@ import { useGetUserQuery } from "@/entities/user/api/userApi";
 import { useGetAllServiceQuery } from "@/entities/all-service/api/allService";
 import { useGetServiceTypeQuery } from "@/entities/service-type/api/serviceTypeApi";
 import { useGetCalculatePriceQuery } from "@/entities/calculate/api/calculatePrice";
+import { useRouter } from "next/navigation";
 const CreateOrder = () => {
   const [price, setPrice] = useState<number>(0);
   const { mutateAsync: createOrder } = useCreateOrder();
@@ -17,6 +18,7 @@ const CreateOrder = () => {
   const [serviceTypeState, setServiceTypeState] = useState<string>("");
   const [weight, setWeight] = useState<number>(0);
   const { mutateAsync: calculatePrice } = useGetCalculatePriceQuery();
+  const router = useRouter();
   useEffect(() => {
     const handleCalculate = async () => {
       if (!fromCity || !toCity || !serviceTypeState || !weight) {
@@ -91,20 +93,21 @@ const CreateOrder = () => {
             <div className={scss.price}>
               <p>Стоимость</p>
               <div>
-                <p>{price.toFixed(1)}</p>
+                <p>{(+price.toString().slice(-3)).toFixed(1)}</p>
               </div>
             </div>
           </div>
           <button
-            onClick={() =>
+            onClick={() => {
               createOrder({
                 userId: user?.id,
                 fromCityId: fromCity,
                 toCityId: toCity,
                 weightKg: weight,
                 serviceTypeId: serviceTypeState,
-              })
-            }
+              });
+              router.push("/user/order");
+            }}
           >
             Перейти к оплате
           </button>

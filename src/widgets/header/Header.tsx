@@ -31,7 +31,7 @@ const Header = () => {
             </div>
 
             <nav className={scss.nav}>
-              <select className={scss.select}>
+              <select>
                 <option value="Услуги">Услуги</option>
               </select>
 
@@ -50,7 +50,11 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => router.push("/user/notification")}
                 />
-                {counter === 0 ? "" : <p className={scss.counter}>{}</p>}
+                {counter === 0 || counter === undefined ? (
+                  ""
+                ) : (
+                  <p className={scss.counter}>{}</p>
+                )}
               </div>
               <FaRegUser
                 fontSize={20}

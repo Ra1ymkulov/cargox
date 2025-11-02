@@ -86,7 +86,7 @@ const KnowPrice = () => {
             <div className={scss.price}>
               <p>Стоимость</p>
               <div>
-                <p>{price.toFixed(1)}</p>
+                <p>{(+price.toString().slice(-3)).toFixed(1)}</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import scss from "./SideBar.module.scss";
 import { LuBell } from "react-icons/lu";
@@ -17,6 +17,7 @@ const Sidebar = () => {
   const counter = user?.notifications.filter(
     (item) => item.read === !true
   ).length;
+
   return (
     <div className={scss.sidebar}>
       <div className={scss.content}>
@@ -38,7 +39,11 @@ const Sidebar = () => {
           >
             <LuBell fontSize={30} color="#001F54" />
             <p>Уведовление</p>
-            {counter === 0 ? "" : <p className={scss.counter}></p>}
+            {counter === 0 || counter === undefined ? (
+              ""
+            ) : (
+              <p className={scss.counter}></p>
+            )}
           </div>
           <div
             onClick={() => router.push("/user/setting")}

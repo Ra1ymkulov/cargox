@@ -5,6 +5,7 @@ const Card: FC<any> = ({ data }) => {
   console.log(data);
 
   const idCode = "#2d2ko3d93m92dd3qd";
+
   return (
     <div className={scss.card}>
       <h1>
@@ -23,11 +24,11 @@ const Card: FC<any> = ({ data }) => {
         </p>
         <p>
           Откуда:
-          <span>{data?.fromCityId.slice(3, 9)}</span>
+          <span>{data?.fromCityId.slice(3, -9)}</span>
         </p>
         <p>
           Куда:
-          <span>{data?.toCityId.slice(3, 9)}</span>
+          <span>{data?.toCityId.slice(3, -9)}</span>
         </p>
         <p>
           Доставлен:

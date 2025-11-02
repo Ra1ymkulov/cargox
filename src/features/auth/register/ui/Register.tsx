@@ -8,6 +8,7 @@ import { FiEyeOff } from "react-icons/fi";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRegisterApi } from "../api/registerApi";
+import { useRouter } from "next/navigation";
 
 interface IRegisterProps {
   firstName: string;
@@ -28,6 +29,7 @@ export const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [repeatShowPassword, setRepeatShowPassword] = useState(false);
+  const router = useRouter();
 
   const nameError = formState.errors.firstName?.message;
   const lastNameError = formState.errors.lastName?.message;
@@ -49,6 +51,7 @@ export const Register = () => {
     };
     registerFunc(data);
     reset();
+    router.push("/");
   };
 
   return (
