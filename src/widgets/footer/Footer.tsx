@@ -1,14 +1,16 @@
 "use client";
 import React from "react";
 import scss from "./Footer.module.scss";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className={scss.footer}>
       <div className="container">
         <div className={scss.content}>
           <div className={scss.market}>
-            <img src="/logo.svg" alt="" />
+            <img onClick={() => router.push("/")} src="/logo.svg" alt="" />
             <p>
               Мы обеспечиваем доставку груза в Кыргызстан различными видами
               транспорта из стран Европы, а также из России, Казахстана и
@@ -22,26 +24,28 @@ const Footer = () => {
           </div>
           <ul>
             <li>Наши услуги</li>
-            <li>Автоперевозки</li>
-            <li>Авиаперевозки</li>
+            <li onClick={() => router.push("/detail/auto")}>Автоперевозки</li>
+            <li onClick={() => router.push("/detail/air")}>Авиаперевозки</li>
             <li>Складское хранение</li>
-            <li>Калькулятор</li>
+            <li onClick={() => router.push("/knowprice")}>Калькулятор</li>
             <li>Грузоперевозки</li>
           </ul>
           <ul>
             <li>О компании</li>
-            <li>О нас</li>
-            <li>Отзывы</li>
+            <li onClick={() => router.push("/contact")}>О нас</li>
+            <li onClick={() => router.push("/reviews")}>Отзывы</li>
             <li>Документы</li>
             <li>Статьи</li>
-            <li>Контакты</li>
+            <li onClick={() => router.push("/contact")}>Контакты</li>
           </ul>
           <ul>
             <li>Контакты</li>
             <li>
-              Улица Жоомарта Боконбаева, 146а  ​Первомайский район,
-              Бишкек​720017 Юридический адрес: г. Бишкек, мкрн. 12, д. 16/1, кв.
-              37.
+              <a target="_blank" href="https://go.2gis.com/418MA">
+                Улица Жоомарта Боконбаева, 146а  ​Первомайский район,
+                Бишкек​720017 Юридический адрес: г. Бишкек, мкрн. 12, д. 16/1,
+                кв. 37.
+              </a>
             </li>
           </ul>
         </div>

@@ -19,6 +19,8 @@
         width: 140px;
         height: 140px;
         object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid black;
       }
       .title {
         line-height: 1.4;
@@ -64,6 +66,18 @@
           border-bottom: 1px solid rgba(0, 0, 0, 0.393);
         }
       }
+    }
+    .error {
+      color: red;
+      font-size: clamp(0.625rem, 0.602rem + 0.11vw, 0.688rem);
+      line-height: 2;
+      margin: 0 auto -15px 0;
+    }
+    .rightData {
+      color: green;
+      font-size: clamp(0.625rem, 0.602rem + 0.11vw, 0.688rem);
+      line-height: 2;
+      margin: 0 auto -15px 0;
     }
   }
 }

@@ -13,11 +13,18 @@ export const Login = () => {
   const { register, formState, reset, handleSubmit } =
     useForm<USERLOGIN.GetUserReq>();
   const { mutateAsync: DataPost } = useLoginApi();
-  function onSubmit(inputValues: USERLOGIN.GetUserReq) {
-    DataPost(inputValues);
-    reset();
-    router.push("/");
+
+  async function onSubmit(inputValues: USERLOGIN.GetUserReq) {
+    try {
+      await DataPost(inputValues);
+      reset();
+      router.push("/");
+    } catch (error) {
+      console.error("Login error:", error);
+      // Здесь можно добавить обработку ошибки, например показ уведомления
+    }
   }
+
   return (
     <div className={scss.login}>
       <div className="container">
@@ -27,17 +34,32 @@ export const Login = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className={scss.getInfo}>
               <div className={scss.input}>
-                <p>Введите имя пользователя или email</p>
+                {formState.errors.email ? (
+                  <span className={scss.error}>
+                    {formState.errors.email.message}
+                  </span>
+                ) : (
+                  <p>Введите имя пользователя или email</p>
+                )}
                 <input
-                  autoComplete="email"
                   {...register("email", {
-                    required: "имя или email обязателен!",
+                    required: "Email обязателен!",
+                    pattern: {
+                      value: /\S+@\S+\.\S+/,
+                      message: "Некорректный email",
+                    },
                   })}
                   type="email"
                 />
               </div>
               <div className={scss.input}>
-                <p>Введите пароль</p>
+                {formState.errors?.password ? (
+                  <span className={scss.error}>
+                    {formState.errors.password.message}
+                  </span>
+                ) : (
+                  <p>Введите пароль</p>
+                )}
                 <input
                   autoComplete="current-password"
                   {...register("password", {
@@ -53,12 +75,12 @@ export const Login = () => {
                 {showPassword ? (
                   <FiEye
                     className={scss.icon}
-                    onClick={() => setShowPassword(!setShowPassword)}
+                    onClick={() => setShowPassword(false)}
                   />
                 ) : (
                   <FiEyeOff
                     className={scss.icon}
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowPassword(true)}
                   />
                 )}
               </div>
