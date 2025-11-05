@@ -14,7 +14,6 @@ import { Alert } from "@mui/material";
 
 const Setting = () => {
   const { data: user } = useGetUserQuery();
-  console.log(user);
 
   const { mutateAsync: handleUpdateUser } = useUpdateProfile();
   const { handleSubmit, formState, register } = useForm<User>();
@@ -29,7 +28,6 @@ const Setting = () => {
     if (!user?.id) return;
     handleUpdateUser({ id: user.id, update: inputValues });
     setAlert(true);
-    console.log("work");
 
     setTimeout(() => {
       setAlert(false);
@@ -114,7 +112,6 @@ const Setting = () => {
         )}
         <div className={scss.section}>
           <IoCameraOutline fontSize={18} color="#757575" />
-
           <input
             {...register("avatar")}
             defaultValue={user?.avatar}

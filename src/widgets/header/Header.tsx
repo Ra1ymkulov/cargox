@@ -43,25 +43,34 @@ const Header = () => {
             </nav>
 
             <div className={scss.user}>
-              <div className={scss.userCounter}>
-                <FiBell
-                  fontSize={22}
-                  color="white"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => router.push("/user/notification")}
-                />
-                {counter === 0 || counter === undefined ? (
-                  ""
-                ) : (
-                  <p className={scss.counter}>{}</p>
-                )}
-              </div>
-              <FaRegUser
-                fontSize={20}
-                color="white"
-                style={{ cursor: "pointer" }}
-                onClick={() => router.push("/user")}
-              />
+              {user ? (
+                <>
+                  <div className={scss.userCounter}>
+                    <FiBell
+                      fontSize={22}
+                      color="white"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => router.push("/user/notification")}
+                    />
+                    {counter === 0 || counter === undefined ? (
+                      ""
+                    ) : (
+                      <p className={scss.counter}>{}</p>
+                    )}
+                  </div>
+                  <FaRegUser
+                    fontSize={20}
+                    color="white"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => router.push("/user")}
+                  />
+                </>
+              ) : (
+                <button onClick={() => router.push("/auth/login")}>
+                  Войти
+                </button>
+              )}
+
               <div
                 className={scss.burgerMenu}
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -99,20 +108,26 @@ const Header = () => {
             ))}
 
             <div className={scss.sidebarIcons}>
-              <FiBell
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                  router.push("/user/notification");
-                }}
-              />
-              <FaRegUser
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                  router.push("/user");
-                }}
-              />
+              {user ? (
+                <>
+                  <FiBell
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                      router.push("/user/notification");
+                    }}
+                  />
+                  <FaRegUser
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      setIsSidebarOpen(false);
+                      router.push("/user");
+                    }}
+                  />
+                </>
+              ) : (
+                ""
+              )}
             </div>
           </nav>
         </aside>

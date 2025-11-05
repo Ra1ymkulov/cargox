@@ -10,7 +10,6 @@ export const useGetCalculatePriceQuery = () => {
   >({
     mutationFn: async (service) => {
       const response = await ORDER_API.post("/calculate-price", service);
-      console.log(response);
       return response.data;
     },
     onSuccess: () => {

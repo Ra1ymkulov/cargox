@@ -5,7 +5,7 @@
   max-width: 500px;
   min-height: 160px;
   border-radius: 7px;
-  padding: 15px;
+  padding: 20px 15px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -17,30 +17,40 @@
       width: 50px;
       height: 50px;
       object-fit: cover;
+      border-radius: 50%;
     }
     .account_title {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 5px;
       h5 {
         font-size: clamp(0.688rem, 0.631rem + 0.24vw, 0.813rem);
         font-weight: 400;
       }
-      p {
-        font-weight: 600;
-        color: gold;
-        span {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: clamp(0.688rem, 0.631rem + 0.24vw, 0.813rem);
-          font-weight: 300;
+      .grade {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .stars {
+          .itemStar {
+            color: gold;
+            font-size: 22px;
+          }
+          .emptyStar {
+            font-size: 22px;
+            color: gray;
+          }
         }
       }
     }
   }
   p {
+    padding: 5px 10px;
     font-size: clamp(0.563rem, 0.42rem + 0.61vw, 0.875rem);
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255);
     letter-spacing: 1.02;
+    width: 100%;
+    max-width: 400px;
   }
 }

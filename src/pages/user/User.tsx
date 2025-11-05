@@ -10,7 +10,6 @@ import { useGetUserQuery } from "@/entities/user/api/userApi";
 
 const User = () => {
   const { data: user } = useGetUserQuery();
-  console.log(user);
   return (
     <div className={scss.profile}>
       <div className={scss.user}>

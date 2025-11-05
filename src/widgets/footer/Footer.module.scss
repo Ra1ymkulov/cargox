@@ -16,6 +16,7 @@
       width: 100%;
       img {
         width: 100px;
+        cursor: pointer;
       }
       p {
         font-size: clamp(0.688rem, 0.574rem + 0.48vw, 0.938rem);
@@ -40,11 +41,13 @@
       li:first-child {
         font-size: clamp(0.875rem, 0.807rem + 0.34vw, 1.063rem);
         color: white;
+        cursor: default;
       }
       li {
         padding-block: 0 20px;
         color: rgba(255, 255, 255, 0.6);
         font-size: clamp(0.688rem, 0.619rem + 0.34vw, 0.875rem);
+        cursor: pointer;
         a {
           color: rgba(255, 255, 255, 0.6);
         }

@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import scss from "./Card.module.scss";
 
 const Card: FC<any> = ({ data }) => {
-  console.log(data);
 
   const idCode = "#2d2ko3d93m92dd3qd";
 

@@ -1,46 +1,13 @@
+"use client";
 import { FC } from "react";
 import scss from "./Review.module.scss";
 import Card from "@/shared/ui/review-card/Card";
+import { useGetAllReviews } from "@/entities/getReviews/api/reviewApi";
+import { useRouter } from "next/navigation";
 
 const Review: FC = () => {
-  const data = [
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-    {
-      img: "/logo-man.svg",
-      name: "Айбек Асылбеков",
-      str: "Оформление груза прошло быстро, без лишней бюрократии. Уведомления приходили вовремя, всё прозрачно.",
-      grade: 5,
-    },
-  ];
+  const { data } = useGetAllReviews();
+  const router = useRouter();
   return (
     <section className={scss.review}>
       <div className="container">
@@ -51,11 +18,11 @@ const Review: FC = () => {
             что некоторые из наших учеников говорят о своем опыте:
           </p>
           <div className={scss.list}>
-            {data.map((item, idx) => (
-              <Card review={item} key={idx} />
+            {data?.slice(0, 6).map((item) => (
+              <Card item={item} key={item.id} />
             ))}
           </div>
-          <button>еще</button>
+          <button onClick={() => router.push("/all-reviews")}>еще</button>
         </div>
       </div>
     </section>

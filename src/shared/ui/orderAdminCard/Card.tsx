@@ -63,7 +63,6 @@ const Card: FC<ICardProps> = ({ item, setTab }) => {
       <button
         onClick={() => {
           delOrder(item.id);
-          console.log(item.id);
         }}
       >
         Удалить заказ
