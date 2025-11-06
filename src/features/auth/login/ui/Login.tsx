@@ -10,20 +10,34 @@ import { useRouter } from "next/navigation";
 export const Login = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const { register, formState, reset, handleSubmit } =
+  const { register, formState, reset, handleSubmit, setError } =
     useForm<USERLOGIN.GetUserReq>();
   const { mutateAsync: DataPost } = useLoginApi();
-
-  async function onSubmit(inputValues: USERLOGIN.GetUserReq) {
+  const onSubmit = async (inputValues: USERLOGIN.GetUserReq) => {
     try {
       await DataPost(inputValues);
       reset();
       router.push("/");
-    } catch (error) {
-      console.error("Login error:", error);
-      // Здесь можно добавить обработку ошибки, например показ уведомления
+    } catch (error: any) {
+      const message = error.message?.toLowerCase() || "";
+      if (message.includes("пользователь")) {
+        setError("email", {
+          type: "manual",
+          message: "Пользователь не найден!",
+        });
+      } else if (message.includes("пароль")) {
+        setError("password", {
+          type: "manual",
+          message: "Неверный пароль!",
+        });
+      } else {
+        setError("password", {
+          type: "manual",
+          message: "Произошла ошибка при входе. Попробуйте позже.",
+        });
+      }
     }
-  }
+  };
 
   return (
     <div className={scss.login}>
@@ -31,7 +45,6 @@ export const Login = () => {
         <div className={scss.main}>
           <div className={scss.content}>
             <h1>Войти</h1>
-
             <form onSubmit={handleSubmit(onSubmit)} className={scss.getInfo}>
               <div className={scss.input}>
                 {formState.errors.email ? (
@@ -52,8 +65,9 @@ export const Login = () => {
                   type="email"
                 />
               </div>
+
               <div className={scss.input}>
-                {formState.errors?.password ? (
+                {formState.errors.password ? (
                   <span className={scss.error}>
                     {formState.errors.password.message}
                   </span>
@@ -64,7 +78,6 @@ export const Login = () => {
                   autoComplete="current-password"
                   {...register("password", {
                     required: "Пароль обязателен!",
-
                     minLength: {
                       value: 6,
                       message: "Пароль должен быть не меньше 6 символов!",
@@ -84,6 +97,7 @@ export const Login = () => {
                   />
                 )}
               </div>
+
               <button>Войти</button>
               <p>
                 Нет аккаунта?

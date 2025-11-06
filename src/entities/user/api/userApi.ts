@@ -1,3 +1,4 @@
+"use client";
 import { USER_API } from "@/shared/api";
 import { useQuery } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
@@ -8,14 +9,19 @@ interface Decode {
   exp: number;
 }
 const useGetUserQuery = () => {
+  const token =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("user") || "null")
+      : null;
+
   return useQuery<USER.GetUser, Error>({
-    queryKey: [`/get-user`],
+    queryKey: ["/user", token],
     queryFn: async () => {
-      const token = JSON.parse(localStorage.getItem("user") || "null");
       const decoded = jwtDecode<Decode>(token);
       const response = await USER_API.get(`/get-user/${decoded.id}`);
       return response.data.user;
     },
+    enabled: !!token,
   });
 };
 export { useGetUserQuery };

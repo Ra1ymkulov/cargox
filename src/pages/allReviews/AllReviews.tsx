@@ -1,10 +1,8 @@
 "use client";
 import { useGetAllReviews } from "@/entities/getReviews/api/reviewApi";
 import scss from "./AllReviews.module.scss";
-
 import React from "react";
 import Card from "@/shared/ui/review-card/Card";
-import { motion } from "framer-motion";
 
 const AllReviews = () => {
   const { data, isLoading } = useGetAllReviews();

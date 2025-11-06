@@ -5,12 +5,10 @@ import { useUserStore } from "@/entities/user/model/userstore";
 import { useEffect } from "react";
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const { data } = useGetUserQuery();
+  const { data: user } = useGetUserQuery();
   const setUser = useUserStore((state) => state.setUser);
-
   useEffect(() => {
-    if (data) setUser(data);
-  }, [data]);
-
+    if (user) setUser(user);
+  }, [user]);
   return children;
 }
