@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import scss from "./Card.module.scss";
+import { useRouter } from "next/navigation";
 
 const Card: FC<any> = ({ data }) => {
-
-  const idCode = "#2d2ko3d93m92dd3qd";
+  const router = useRouter();
 
   return (
     <div className={scss.card}>

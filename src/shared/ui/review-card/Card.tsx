@@ -15,7 +15,10 @@ const Card: FC<IProps> = ({ item }) => {
           alt={item.name || "avatar"}
         />
         <div className={scss.account_title}>
-          <h5>{item.name}</h5>
+          <h5>
+            {item.name[0].toUpperCase()}
+            {item.name.slice(1)}
+          </h5>
           <div className={scss.grade}>
             <Rating
               value={+item.star}
@@ -29,6 +32,10 @@ const Card: FC<IProps> = ({ item }) => {
             <span>{item.star}</span>
           </div>
         </div>
+        <p>
+          {item.city[0].toUpperCase()}
+          {item.city.slice(1)}
+        </p>
       </div>
       <p className={scss.description}>
         {item.text[0].toUpperCase()}

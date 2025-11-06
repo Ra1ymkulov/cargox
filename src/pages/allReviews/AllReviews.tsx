@@ -11,6 +11,7 @@ const AllReviews = () => {
     <div className={scss.reviews}>
       <div className="container">
         <div className={scss.content}>
+          <h1>Все отзывы</h1>
           {data
             ?.sort((a, b) => b.star - a.star)
             .map((item, idx) => (
