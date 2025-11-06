@@ -18,7 +18,6 @@ const Notification = () => {
     const dataB = new Date(a.createdAt).getTime();
     return dataB - dataA;
   });
-  console.log(user);
 
   return (
     <div className={scss.section}>
@@ -48,7 +47,7 @@ const Notification = () => {
             <img src="/LogoCargoX.svg" alt="logo-cargoX" />
           </div>
           <p>
-            Ваш заказ
+            Ваш заказ{" "}
             {String(item.order.status) === "IN_TRANSIT"
               ? "в пути"
               : String(item.order.status) === "DELIVERED"

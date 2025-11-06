@@ -4,7 +4,6 @@ import scss from "./AllReviews.module.scss";
 
 import React from "react";
 import Card from "@/shared/ui/review-card/Card";
-import { motion } from "framer-motion";
 
 const AllReviews = () => {
   const { data, isLoading } = useGetAllReviews();
@@ -13,6 +12,7 @@ const AllReviews = () => {
     <div className={scss.reviews}>
       <div className="container">
         <div className={scss.content}>
+          <h1>Все отзывы</h1>
           {data
             ?.sort((a, b) => b.star - a.star)
             .map((item, idx) => (

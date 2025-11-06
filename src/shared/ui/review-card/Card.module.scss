@@ -12,7 +12,12 @@
   .account {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
+    p {
+      width: auto;
+      align-self: start;
+    }
     img {
       width: 50px;
       height: 50px;
@@ -23,6 +28,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+      margin-right: auto;
       h5 {
         font-size: clamp(0.688rem, 0.631rem + 0.24vw, 0.813rem);
         font-weight: 400;
