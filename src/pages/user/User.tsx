@@ -13,7 +13,11 @@ const User = () => {
   return (
     <div className={scss.profile}>
       <div className={scss.user}>
-        <img src="/defeault-image-user.jpg" alt="dw" />
+        {/* <img src="/defeault-image-user.jpg" alt="dw" /> */}
+        <img
+          src={user?.avatar ? user.avatar : "/defeault-image-user.jpg"}
+          alt="dw"
+        />
         <div className={scss.title}>
           <h2>{user?.fullName}</h2>
           <i>@{user?.userName}</i>
@@ -34,11 +38,11 @@ const User = () => {
         </div>
         <div className={scss.section}>
           <FiPhone fontSize={20} color="#757575" />
-          <p>+996 990 200 211</p>
+          <p>{user?.phone ? user.phone : "Нету"}</p>
         </div>
         <div className={scss.section}>
           <GrLocation fontSize={20} color="#757575" />
-          <p>Бишкек</p>
+          <p>{user?.country ? user.country : "Неизвестно"}</p>
         </div>
       </div>
     </div>

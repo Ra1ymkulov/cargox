@@ -18,6 +18,8 @@ const Notification = () => {
     const dataB = new Date(a.createdAt).getTime();
     return dataB - dataA;
   });
+  console.log(user);
+
   return (
     <div className={scss.section}>
       {notification?.map((item, index) => (
@@ -45,7 +47,15 @@ const Notification = () => {
             ></div>
             <img src="/LogoCargoX.svg" alt="logo-cargoX" />
           </div>
-          <p>Ваш заказ доставлен !</p>
+          <p>
+            Ваш заказ
+            {String(item.order.status) === "IN_TRANSIT"
+              ? "в пути"
+              : String(item.order.status) === "DELIVERED"
+              ? "доставлен"
+              : "отменено"}
+            !
+          </p>
           <p className={scss.trackcode}>
             трек-код: <span>{item.order.trackingCode}</span>
           </p>

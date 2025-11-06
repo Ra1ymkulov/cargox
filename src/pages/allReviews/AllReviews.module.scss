@@ -1,0 +1,61 @@
+.reviews {
+  padding-block: 40px;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px 20px;
+    width: 100%;
+    max-width: 1050px;
+    margin-inline: auto;
+  }
+}
+.cargoX_loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  background: transparent;
+
+  .logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: clamp(4.375rem, 3.239rem + 5.68vw, 7.5rem);
+    color: #000000;
+    letter-spacing: -3px;
+
+    span {
+      position: relative;
+      display: inline-block;
+      color: #000;
+      background: linear-gradient(90deg, #000000 0%, #7db200 50%, #000000 100%);
+      background-size: 200%;
+      background-position: 200% 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+    }
+    .cx {
+      animation: greenFlow 3.5s ease-in-out infinite;
+      margin-right: -15px;
+    }
+  }
+}
+
+@keyframes greenFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  20% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

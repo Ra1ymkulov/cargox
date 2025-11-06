@@ -46,3 +46,12 @@ enum OrderStatus {
   DELIVERED = "DELIVERED",
   CANCELED = "CANCELED",
 }
+interface Reviews {
+  id: string;
+  userId: string;
+  name: string;
+  city: string;
+  email: string;
+  text: string;
+  star: number;
+}

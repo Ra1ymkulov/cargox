@@ -13,8 +13,10 @@
     img {
       width: 140px;
       height: 140px;
-      border-radius: 50%;
       object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      border: 2px solid black;
     }
     .title {
       line-height: 1.4;

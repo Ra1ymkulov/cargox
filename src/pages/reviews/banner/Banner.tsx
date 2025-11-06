@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import scss from "./Banner.module.scss";
 
@@ -12,7 +13,15 @@ const Banner: FC = () => {
             Мы работаем для вашего комфорта и безопасности. Ниже — реальные
             отзывы тех, кто уже воспользовался нашими услугами.
           </p>
-          <button>Оставить отзыв</button>
+          <button
+            onClick={() => {
+              document
+                .getElementById("grade")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Оставить отзыв
+          </button>
         </div>
       </div>
     </section>
