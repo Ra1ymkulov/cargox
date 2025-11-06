@@ -1,6 +1,10 @@
 .services {
   padding-block: 40px;
   .content {
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,12 +30,33 @@
         flex-direction: column;
         gap: 20px;
         h1 {
-          font-size: 40px;
+          font-size: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+        }
+        p {
+          font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+        }
+        @media (max-width: 802px) {
+          max-width: 500px;
+          text-align: center;
         }
       }
+      @media (max-width: 802px) {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 1085px) {
       img {
-        width: 100%;
-        max-width: 600px;
+        max-width: 500px;
+      }
+    }
+    @media (max-width: 1085px) {
+      img {
+        max-width: 400px;
+      }
+    }
+    @media (max-width: 802px) {
+      img {
+        max-width: 500px;
       }
     }
   }
