@@ -43,33 +43,27 @@ const Header = () => {
             </nav>
 
             <div className={scss.user}>
-              {user ? (
-                <>
-                  <div className={scss.userCounter}>
-                    <FiBell
-                      fontSize={22}
-                      color="white"
-                      style={{ cursor: "pointer" }}
-                      onClick={() => router.push("/user/notification")}
-                    />
-                    {counter === 0 || counter === undefined ? (
-                      ""
-                    ) : (
-                      <p className={scss.counter}>{}</p>
-                    )}
-                  </div>
-                  <FaRegUser
-                    fontSize={20}
+              <>
+                <div className={scss.userCounter}>
+                  <FiBell
+                    fontSize={22}
                     color="white"
                     style={{ cursor: "pointer" }}
-                    onClick={() => router.push("/user")}
+                    onClick={() => router.push("/user/notification")}
                   />
-                </>
-              ) : (
-                <button onClick={() => router.push("/auth/login")}>
-                  Войти
-                </button>
-              )}
+                  {counter === 0 || counter === undefined ? (
+                    ""
+                  ) : (
+                    <p className={scss.counter}>{}</p>
+                  )}
+                </div>
+                <FaRegUser
+                  fontSize={20}
+                  color="white"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => router.push("/user")}
+                />
+              </>
 
               <div
                 className={scss.burgerMenu}

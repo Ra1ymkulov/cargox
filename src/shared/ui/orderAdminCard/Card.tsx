@@ -60,13 +60,13 @@ const Card: FC<ICardProps> = ({ item, setTab }) => {
         <p>{user?.fullName}</p>
       </div>
       <button onClick={() => setModalShow(true)}>Изменить статус</button>
-      <button
-        onClick={() => {
-          delOrder(item.id);
-        }}
+      {/* <button
+      onClick={() => {
+      handleDeleteOrder(item);
+      }}
       >
         Удалить заказ
-      </button>
+      </button> */}
       {modalShow && (
         <Modal
           closeModal={() => setModalShow(false)}
