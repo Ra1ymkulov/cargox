@@ -1,0 +1,57 @@
+.carousel {
+  position: relative;
+  padding-block: 70px 50px;
+  margin-block: 60px;
+  position: sticky;
+  top: 0;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 25px;
+  padding: 5px;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.next {
+  right: 4%;
+}
+
+.prev {
+  left: 4%;
+}

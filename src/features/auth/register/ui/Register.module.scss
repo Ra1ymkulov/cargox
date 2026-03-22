@@ -1,0 +1,97 @@
+.register {
+  padding-block: 100px 40px;
+  .main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    .titleMain {
+      width: 100%;
+      max-width: 370px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      img {
+        height: 30px;
+        object-fit: contain;
+      }
+      h1 {
+        font-size: 27px;
+      }
+      p {
+        color: #6d6d6d;
+        font-size: 19px;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: black;
+    h1 {
+      font-size: clamp(0.938rem, 0.71rem + 1.14vw, 1.563rem);
+    }
+    .getInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 90%;
+      max-width: 400px;
+      .userData {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        .input {
+          width: 100%;
+          max-width: 175px;
+        }
+      }
+      .input {
+        position: relative;
+        p {
+          font-size: clamp(0.563rem, 0.472rem + 0.45vw, 0.813rem);
+          line-height: 2;
+          justify-content: flex-start;
+        }
+        input {
+          width: 100%;
+          padding: 8px;
+          border-radius: 8px;
+          border: 1px solid rgba(0, 0, 0, 0.266);
+        }
+        .icon {
+          position: absolute;
+          right: 12px;
+          bottom: 8px;
+          z-index: 10;
+        }
+      }
+      button {
+        background-color: #2c2c2c;
+        border-radius: 8px;
+        color: white;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      p {
+        font-size: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        a {
+          color: #0c00f1;
+          cursor: pointer;
+        }
+      }
+      .error {
+        color: red;
+        font-size: clamp(0.625rem, 0.602rem + 0.11vw, 0.688rem);
+        line-height: 2;
+      }
+    }
+  }
+}

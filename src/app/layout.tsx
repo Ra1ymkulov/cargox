@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/widgets/header/Header";
 import Footer from "@/widgets/footer/Footer";
+import ReactQueryProviders from "./providers/ReactQueryProviders";
+import { UserProvider } from "./providers/UserProviders";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -19,14 +21,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <div className="layout">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <>
+      <head>
+        {/* <link
+          rel="shortcut icon"
+          href="https://play-lh.googleusercontent.com/deIid8B-gffCIqVd3S0TxIXSzH9DrCcwJO-FmwwJNyPrVNZR0ufL0dv9JZt7N3PKWeI"
+          type="image/x-icon"
+        /> */}
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+          rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="/mainLogo.png" type="image/x-icon" />
+      </head>
+      <html lang="en">
+        <body className={`${inter.className}`}>
+          <ReactQueryProviders>
+            <UserProvider>
+              <div className="layout">
+                <Header />
+                {children}
+                <Footer />
+              </div>
+            </UserProvider>
+          </ReactQueryProviders>
+        </body>
+      </html>
+    </>
   );
 }

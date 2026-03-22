@@ -1,0 +1,62 @@
+.card {
+  background-color: #0d0d0de6;
+  color: white;
+  width: 100%;
+  max-width: 500px;
+  min-height: 160px;
+  border-radius: 7px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    p {
+      width: auto;
+      align-self: start;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .account_title {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-right: auto;
+      h5 {
+        font-size: clamp(0.688rem, 0.631rem + 0.24vw, 0.813rem);
+        font-weight: 400;
+      }
+      .grade {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .stars {
+          .itemStar {
+            color: gold;
+            font-size: 22px;
+          }
+          .emptyStar {
+            font-size: 22px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+  p {
+    padding: 5px 10px;
+    font-size: clamp(0.563rem, 0.42rem + 0.61vw, 0.875rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255);
+    letter-spacing: 1.02;
+    width: 100%;
+    max-width: 400px;
+  }
+}

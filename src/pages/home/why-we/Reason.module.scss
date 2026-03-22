@@ -1,0 +1,94 @@
+.reason {
+  position: absolute;
+  top: 62%;
+  width: 100%;
+  z-index: 10%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      .square {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        background-color: white;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+        box-shadow: -5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+        transition: 0.5s ease-in;
+        img {
+          width: 45px;
+          height: 45px;
+          object-fit: contain;
+          transition: 0.5s ease-in;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.5;
+          font-weight: 400;
+          color: black;
+          transition: 0.5s ease-in;
+        }
+        &:last-child {
+          box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1),
+            -5px 0 5px 0 rgba(0, 0, 0, 0.162);
+        }
+        &:hover {
+          background: #dbdbdb;
+          width: 230px;
+          height: 180px;
+          box-shadow: -5px 5px 5px 0 rgba(0, 0, 0, 0);
+
+          z-index: 10;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+// @media (max-width: 975px) {
+//   .reason .content .list {
+//     gap: 0 20px;
+//   }
+// }
+// @media (max-width: 830px) {
+//   .reason .content .list {
+//     gap: 60px 40px;
+//     max-width: 500px;
+//   }
+// }
+// @media (max-width: 600px) {
+//   .reason .content .list {
+//     gap: 40px;
+//     .circle {
+//       width: 100px;
+//       height: 100px;
+//       img {
+//         width: 30px;
+//         height: 30px;
+//       }
+//       p {
+//         font-size: 12px;
+//       }
+//     }
+//   }
+// }
